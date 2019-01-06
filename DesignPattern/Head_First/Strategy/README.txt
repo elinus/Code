@@ -1,20 +1,20 @@
-The Strategy Pattern defines family of algorithms,
+The *Strategy Pattern* defines family of algorithms,
 encapsulates each one, and makes them interchangeable.
 Strategy lets the algorithm vary independently from
 clients that use it.
 -----------------------------------------------------
 
-Build
+#####Build
 -----
     $cd build
     $cmake ..
     $make
 
-Clean
+#####Clean
 -----
     $make clean
 
-Run:
+#####Run
 ----
     $ ./Strategy
 
