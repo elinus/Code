@@ -1,14 +1,14 @@
-#ifndef __MALLARD_DUCK__
-#define __MALLARD_DUCK__
+#ifndef __REDHEAD_DUCK__
+#define __REDHEAD_DUCK__
 
 #include <iostream>
 #include <Strategy/Duck.h>
 #include <Strategy/FlyWithWings.h>
 #include <Strategy/Quack.h>
 
-class MallardDuck : public Duck {
+class RedheadDuck : public Duck {
     public:
-        MallardDuck();
+        RedheadDuck();
         void display();
 };
 

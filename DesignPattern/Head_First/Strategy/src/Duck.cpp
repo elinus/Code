@@ -12,3 +12,18 @@ void Duck::performFly()
 {
     flyBehaviour->fly();
 }
+
+void Duck::performQuack()
+{
+    quackBehaviour->quack();
+}
+
+void Duck::setFlyBehaviour(FlyBehaviour *fb)
+{
+    flyBehaviour = fb;
+}
+
+void Duck::setQuackBehaviour(QuackBehaviour *qb)
+{
+    quackBehaviour = qb;
+}
