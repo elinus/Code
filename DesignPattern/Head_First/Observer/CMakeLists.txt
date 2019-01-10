@@ -12,5 +12,8 @@ add_executable(
 
             src/WeatherData.cpp
             src/CurrentConditionsDisplay.cpp
+            src/StatisticsDisplay.cpp
+            src/ForecastDisplay.cpp
+            src/HeatIndexDisplay.cpp
             src/WeatherStation.cpp
 )

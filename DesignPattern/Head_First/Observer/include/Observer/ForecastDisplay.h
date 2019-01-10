@@ -1,21 +1,20 @@
-#ifndef __CURRENT_CONDITIONS_DISPLAY_H__
-#define __CURRENT_CONDITIONS_DISPLAY_H__
+#ifndef __FORECAST_DISPLAY_H__
+#define __FORECAST_DISPLAY_H__
 
 #include <Observer/Observer.h>
 #include <Observer/DisplayElement.h>
 #include <Observer/Subject.h>
 
 #include <iostream>
-#include <iomanip>
 
-class CurrentConditionsDisplay : public Observer, public DisplayElement {
+class ForecastDisplay : public Observer, public DisplayElement {
     public:
-        CurrentConditionsDisplay(Subject *weatherData);
+        ForecastDisplay(Subject *weatherData);
         void update(float temperature, float humidity, float pressure);
         void display();
     private:
-        float temperature;
-        float humidity;
+        float currentPressure = 29.92f;
+        float lastPressure;
         Subject *weatherData;
 };
 

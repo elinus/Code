@@ -1,21 +1,20 @@
-#ifndef __CURRENT_CONDITIONS_DISPLAY_H__
-#define __CURRENT_CONDITIONS_DISPLAY_H__
+#ifndef __HEAT_INDEX_DISPLAY_H__
+#define __HEAT_INDEX_DISPLAY_H__
 
 #include <Observer/Observer.h>
 #include <Observer/DisplayElement.h>
 #include <Observer/Subject.h>
 
 #include <iostream>
-#include <iomanip>
 
-class CurrentConditionsDisplay : public Observer, public DisplayElement {
+class HeatIndexDisplay : public Observer, public DisplayElement {
     public:
-        CurrentConditionsDisplay(Subject *weatherData);
+        HeatIndexDisplay(Subject *weatherData);
         void update(float temperature, float humidity, float pressure);
         void display();
     private:
-        float temperature;
-        float humidity;
+        float computeHeatIndex(float t, float rh);
+        float heatIndex = 0.0f;
         Subject *weatherData;
 };
 

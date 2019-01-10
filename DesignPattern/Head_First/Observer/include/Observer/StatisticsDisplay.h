@@ -1,5 +1,5 @@
-#ifndef __CURRENT_CONDITIONS_DISPLAY_H__
-#define __CURRENT_CONDITIONS_DISPLAY_H__
+#ifndef __STATISTICS_DISPLAY_H__
+#define __STATISTICS_DISPLAY_H__
 
 #include <Observer/Observer.h>
 #include <Observer/DisplayElement.h>
@@ -8,14 +8,16 @@
 #include <iostream>
 #include <iomanip>
 
-class CurrentConditionsDisplay : public Observer, public DisplayElement {
+class StatisticsDisplay : public Observer, public DisplayElement {
     public:
-        CurrentConditionsDisplay(Subject *weatherData);
+        StatisticsDisplay(Subject *weatherData);
         void update(float temperature, float humidity, float pressure);
         void display();
     private:
-        float temperature;
-        float humidity;
+        float maxTemp = 0.0f;
+        float minTemp = 200.0f;
+        float tempSum = 0.0f;
+        int numReadings;
         Subject *weatherData;
 };
 
