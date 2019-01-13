@@ -24,5 +24,13 @@ int main (int argc, char *argv[])
             tuner, dvd, cd, projector, lights, screen, popper);
 
     homeTheater->watchMovie("Raiders of the Lost Ark");
+    homeTheater->endMovie();
+
+    // Test other methods
+    //homeTheater->listenToCd("Galib Gazals");
+    //homeTheater->endCd();
+    //homeTheater->listenToRadio(99.99);
+    //homeTheater->endRadio();
+
     return 0;
 }

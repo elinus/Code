@@ -22,7 +22,7 @@ HomeTheaterFacade::HomeTheaterFacade(Amplifier *amp,
 
 void HomeTheaterFacade::watchMovie(std::string movie)
 {
-    std::cout << "Get ready to watch a movie\n";
+    std::cout << "Get ready to watch a movie...\n";
     popper->on();
     popper->pop();
     lights->dim(10);
@@ -39,26 +39,52 @@ void HomeTheaterFacade::watchMovie(std::string movie)
 
 void HomeTheaterFacade::endMovie()
 {
-
+    std::cout << "Shutting movie theater down...\n";
+    popper->off();
+    lights->on();
+    screen->up();
+    projector->off();
+    amp->off();
+    dvd->stop();
+    dvd->eject();
+    dvd->off();
 }
 
 void HomeTheaterFacade::listenToCd(std::string cdTitle)
 {
-
+    std::cout << "\nGet ready for an audiopile experience...\n";
+    lights->on();
+    amp->on();
+    amp->setVolume(5);
+    amp->setCd(cd);
+    amp->setStereoSound();
+    cd->on();
+    cd->play(cdTitle);
 }
 
 void HomeTheaterFacade::endCd()
 {
-
+    std::cout << "Shutting down CD...\n";
+    amp->off();
+    amp->setCd(cd);
+    cd->eject();
+    cd->off();
 }
 
 void HomeTheaterFacade::listenToRadio(double frequency)
 {
-
+    std::cout << "\nTuning the airwaves...\n";
+    tuner->on();
+    tuner->setFrequency(frequency);
+    amp->on();
+    amp->setVolume(5);
+    amp->setTuner(tuner);
 }
 
 void HomeTheaterFacade::endRadio()
 {
-
+    std::cout << "Shutting down the tuner...\n";
+    tuner->off();
+    amp->off();
 }
 
