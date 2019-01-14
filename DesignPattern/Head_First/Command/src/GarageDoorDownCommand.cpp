@@ -9,3 +9,7 @@ void GarageDoorDownCommand::execute()
     garageDoor->down();
 }
 
+std::string GarageDoorDownCommand::toString()
+{
+    return "GarageDoorDownCommand";
+}

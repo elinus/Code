@@ -9,3 +9,8 @@ void LightOffCommand::execute()
 {
     light->off();
 }
+
+std::string LightOffCommand::toString()
+{
+    return "LightOffCommand";
+}

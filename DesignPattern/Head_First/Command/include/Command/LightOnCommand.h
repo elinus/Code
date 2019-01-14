@@ -3,11 +3,13 @@
 
 #include <Command/Command.h>
 #include <Command/Light.h>
+#include <string>
 
 class LightOnCommand : public Command {
     public:
         LightOnCommand(Light *light);
         void execute();
+        std::string toString();
     private:
         Light *light;
 };

@@ -9,3 +9,8 @@ void LightOnCommand::execute()
 {
     light->on();
 }
+
+std::string LightOnCommand::toString()
+{
+    return "LightOnCommand";
+}

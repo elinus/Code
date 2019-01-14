@@ -8,3 +8,8 @@ void GarageDoorUpCommand::execute()
 {
     garageDoor->up();
 }
+
+std::string GarageDoorUpCommand::toString()
+{
+    return "GarageDoorUpCommand";
+}
