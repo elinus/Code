@@ -8,7 +8,8 @@ project(Command)
 include_directories(include)
 
 add_executable(
-            Command
+            a.out
+#            Command
             
             src/NoCommand.cpp
             src/Light.cpp	
