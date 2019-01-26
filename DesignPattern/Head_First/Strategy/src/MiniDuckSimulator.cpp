@@ -51,5 +51,11 @@ int main()
     duck->setFlyBehaviour(new FlyRocketPowered());
     duck->performFly();
 
+    delete mallard;
+    delete redhead;
+    delete rubber;
+    delete decoy;
+    delete model;
+
     return 0;
 }

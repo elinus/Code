@@ -5,7 +5,9 @@
 #include <FlyBehaviour.h>
 
 class FlyNoWay : public FlyBehaviour {
-    public: 
+    public:
+        FlyNoWay();
+        virtual ~FlyNoWay();
         void fly();
 };
 

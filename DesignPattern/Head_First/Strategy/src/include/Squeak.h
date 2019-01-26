@@ -6,6 +6,8 @@
 
 class Squeak : public QuackBehaviour {
     public:
+        Squeak();
+        virtual ~Squeak();
         void quack();
 };
 

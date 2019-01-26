@@ -3,6 +3,8 @@
 
 class FlyBehaviour {
     public:
+        virtual ~FlyBehaviour() 
+        {}
         virtual void fly() = 0;
 };
 

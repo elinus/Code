@@ -6,6 +6,8 @@
 
 class MuteQuack : public QuackBehaviour {
     public:
+        MuteQuack();
+        virtual ~MuteQuack();
         void quack();
 };
 

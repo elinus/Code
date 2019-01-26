@@ -9,6 +9,7 @@
 class RubberDuck : public Duck {
     public:
         RubberDuck();
+        ~RubberDuck();
         void display();
 };
 

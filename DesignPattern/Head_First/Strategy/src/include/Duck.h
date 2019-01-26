@@ -8,6 +8,7 @@
 class Duck {
     public:
         Duck();
+        virtual ~Duck();
         virtual void display() = 0;
         void performFly();
         void performQuack();

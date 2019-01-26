@@ -6,6 +6,8 @@
 
 class FlyRocketPowered : public FlyBehaviour {
     public:
+        FlyRocketPowered();
+        virtual ~FlyRocketPowered();
         void fly();
 };
 

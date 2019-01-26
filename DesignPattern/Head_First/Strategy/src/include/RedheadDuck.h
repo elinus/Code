@@ -9,6 +9,7 @@
 class RedheadDuck : public Duck {
     public:
         RedheadDuck();
+        ~RedheadDuck();
         void display();
 };
 
