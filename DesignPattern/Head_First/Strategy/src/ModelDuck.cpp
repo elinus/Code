@@ -1,4 +1,4 @@
-#include <Strategy/ModelDuck.h>
+#include <ModelDuck.h>
 
 ModelDuck::ModelDuck()
 {

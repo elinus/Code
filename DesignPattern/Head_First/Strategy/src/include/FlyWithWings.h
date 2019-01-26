@@ -2,7 +2,7 @@
 #define __FLY_WITH_WINGS__
 
 #include <iostream>
-#include <Strategy/FlyBehaviour.h>
+#include <FlyBehaviour.h>
 
 class FlyWithWings : public FlyBehaviour {
     public:

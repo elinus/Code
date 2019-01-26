@@ -2,9 +2,9 @@
 #define __MALLARD_DUCK__
 
 #include <iostream>
-#include <Strategy/Duck.h>
-#include <Strategy/FlyWithWings.h>
-#include <Strategy/Quack.h>
+#include <Duck.h>
+#include <FlyWithWings.h>
+#include <Quack.h>
 
 class MallardDuck : public Duck {
     public:

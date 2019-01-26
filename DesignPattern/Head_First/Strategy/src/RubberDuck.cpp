@@ -1,4 +1,4 @@
-#include <Strategy/RubberDuck.h>
+#include <RubberDuck.h>
 
 RubberDuck::RubberDuck()
 {

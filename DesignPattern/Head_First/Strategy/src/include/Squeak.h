@@ -2,7 +2,7 @@
 #define __SQUEAK_H__
 
 #include <iostream>
-#include <Strategy/QuackBehaviour.h>
+#include <QuackBehaviour.h>
 
 class Squeak : public QuackBehaviour {
     public:

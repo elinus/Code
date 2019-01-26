@@ -1,4 +1,4 @@
-#include <Strategy/MallardDuck.h>
+#include <MallardDuck.h>
 
 MallardDuck::MallardDuck()
 {

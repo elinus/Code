@@ -1,4 +1,4 @@
-#include <Strategy/Duck.h>
+#include <Duck.h>
 
 Duck::Duck()
 {}

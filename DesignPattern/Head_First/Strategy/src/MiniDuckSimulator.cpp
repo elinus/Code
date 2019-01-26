@@ -1,12 +1,12 @@
 #include <iostream>
-#include <Strategy/MallardDuck.h>
-#include <Strategy/ModelDuck.h>
-#include <Strategy/RedheadDuck.h>
-#include <Strategy/RubberDuck.h>
-#include <Strategy/DecoyDuck.h>
-#include <Strategy/FlyRocketPowered.h>
+#include <MallardDuck.h>
+#include <ModelDuck.h>
+#include <RedheadDuck.h>
+#include <RubberDuck.h>
+#include <DecoyDuck.h>
+#include <FlyRocketPowered.h>
 
-int main(int argc, char *argv[])
+int main()
 {
     Duck *duck;
     MallardDuck *mallard = new MallardDuck();

@@ -2,9 +2,9 @@
 #define __RUBBER_DUCK__
 
 #include <iostream>
-#include <Strategy/Duck.h>
-#include <Strategy/FlyNoWay.h>
-#include <Strategy/Squeak.h>
+#include <Duck.h>
+#include <FlyNoWay.h>
+#include <Squeak.h>
 
 class RubberDuck : public Duck {
     public:

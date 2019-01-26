@@ -2,7 +2,7 @@
 #define __FLY_ROCKET_POWERED__
 
 #include <iostream>
-#include <Strategy/FlyBehaviour.h>
+#include <FlyBehaviour.h>
 
 class FlyRocketPowered : public FlyBehaviour {
     public:

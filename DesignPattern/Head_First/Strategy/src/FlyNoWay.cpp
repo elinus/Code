@@ -1,4 +1,4 @@
-#include <Strategy/FlyNoWay.h>
+#include <FlyNoWay.h>
 
 void FlyNoWay::fly()
 {

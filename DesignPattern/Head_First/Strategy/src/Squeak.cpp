@@ -1,4 +1,4 @@
-#include <Strategy/Squeak.h>
+#include <Squeak.h>
 
 void Squeak::quack()
 {

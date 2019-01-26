@@ -2,8 +2,8 @@
 #define __DUCK_H__
 
 #include <iostream>
-#include <Strategy/FlyBehaviour.h>
-#include <Strategy/QuackBehaviour.h>
+#include <FlyBehaviour.h>
+#include <QuackBehaviour.h>
 
 class Duck {
     public:

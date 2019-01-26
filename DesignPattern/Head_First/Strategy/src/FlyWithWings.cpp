@@ -1,4 +1,4 @@
-#include <Strategy/FlyWithWings.h>
+#include <FlyWithWings.h>
 
 void FlyWithWings::fly()
 {

@@ -2,7 +2,7 @@
 #define __MUTEQUACK_H__
 
 #include <iostream>
-#include <Strategy/QuackBehaviour.h>
+#include <QuackBehaviour.h>
 
 class MuteQuack : public QuackBehaviour {
     public:

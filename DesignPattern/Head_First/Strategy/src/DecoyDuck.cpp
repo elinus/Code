@@ -1,4 +1,4 @@
-#include <Strategy/DecoyDuck.h>
+#include <DecoyDuck.h>
 
 DecoyDuck::DecoyDuck()
 {

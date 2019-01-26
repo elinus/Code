@@ -2,9 +2,9 @@
 #define __MODEL_DUCK__
 
 #include <iostream>
-#include <Strategy/Duck.h>
-#include <Strategy/FlyNoWay.h>
-#include <Strategy/Quack.h>
+#include <Duck.h>
+#include <FlyNoWay.h>
+#include <Quack.h>
 
 class ModelDuck : public Duck {
     public:

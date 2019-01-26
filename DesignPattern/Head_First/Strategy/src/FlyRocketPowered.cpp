@@ -1,4 +1,4 @@
-#include <Strategy/FlyRocketPowered.h>
+#include <FlyRocketPowered.h>
 
 void FlyRocketPowered::fly()
 {

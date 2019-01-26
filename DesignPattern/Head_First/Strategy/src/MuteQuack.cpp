@@ -1,4 +1,4 @@
-#include <Strategy/MuteQuack.h>
+#include <MuteQuack.h>
 
 void MuteQuack::quack()
 {

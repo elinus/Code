@@ -1,4 +1,4 @@
-#include <Strategy/Quack.h>
+#include <Quack.h>
 
 void Quack::quack()
 {

@@ -1,4 +1,4 @@
-#include <Strategy/RedheadDuck.h>
+#include <RedheadDuck.h>
 
 RedheadDuck::RedheadDuck()
 {
