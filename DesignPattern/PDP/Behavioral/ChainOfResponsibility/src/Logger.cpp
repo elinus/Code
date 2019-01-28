@@ -4,7 +4,11 @@ Logger::Logger()
 {}
 
 Logger::~Logger()
-{}
+{
+    if (next != nullptr) {
+        delete next;
+    }
+}
 
 Logger * Logger::setNext(Logger * log)
 {
