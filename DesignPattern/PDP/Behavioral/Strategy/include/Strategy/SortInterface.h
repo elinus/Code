@@ -3,6 +3,8 @@
 
 class SortInterface {
 public:
+    virtual ~SortInterface() 
+    {}
 	virtual void sort(int array[]) = 0;
 };
 

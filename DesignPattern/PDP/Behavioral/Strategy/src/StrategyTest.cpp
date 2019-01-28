@@ -10,7 +10,7 @@ int main() {
 	mysorter->doSort(listToBeSorted);
 	mysorter->setSorter(new QuickSort());
 	mysorter->doSort(listToBeSorted);
-
 	delete mysorter;
+
 	return 0;
 }

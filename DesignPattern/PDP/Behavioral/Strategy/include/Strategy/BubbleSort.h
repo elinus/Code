@@ -6,7 +6,8 @@
 
 class BubbleSort : public SortInterface {
 public:
-
+    BubbleSort();
+    virtual ~BubbleSort();
 	// Inherited via SortInterface
 	virtual void sort(int array[]) override;
 

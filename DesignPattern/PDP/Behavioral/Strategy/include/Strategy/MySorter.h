@@ -6,7 +6,7 @@
 class MySorter : public Sorter {
 public:
 	MySorter();
-	~MySorter();
+	virtual ~MySorter();
 	// Inherited via Sorter
 	virtual void doSort(int listToSort[]) override;
 };

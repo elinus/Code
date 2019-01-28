@@ -6,7 +6,7 @@
 class Sorter {
 public:
 	Sorter();
-	~Sorter();
+	virtual ~Sorter();
 	void setSorter(SortInterface *strategy);
 	SortInterface* getSorter();
 	virtual void doSort(int listToSort[]) = 0;
