@@ -31,7 +31,7 @@ int main (int argc, char *argv[])
     root->right->left = new Node(6);
     root->right->right = new Node(7);
 
-    std::cout << "Preorder Traversal: ";
+    std::cout << "Preorder Traversal(recursive): ";
     preorder(root);
     std::cout << "\n";
     return 0;

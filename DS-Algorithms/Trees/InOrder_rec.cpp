@@ -31,7 +31,7 @@ int main (int argc, char *argv[])
     root->right->left = new Node(6);
     root->right->right = new Node(7);
 
-    std::cout << "Inorder Traversal: ";
+    std::cout << "Inorder Traversal(recursive): ";
     inorder(root);
     std::cout << "\n";
     return 0;
