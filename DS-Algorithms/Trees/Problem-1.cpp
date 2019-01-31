@@ -1,6 +1,10 @@
+/*
+ * Find maximum in Tree (recursive)
+ */
 #include <iostream>
+#include <limits>
 
-/* {{ Binary Tree Node */
+/* Binary Tree Node */
 struct Node {
     
     int data;
@@ -13,21 +17,21 @@ struct Node {
     }
 };
 
-void print_(Node *root) {
-    if (root) {
-        std::cout << root->data << " ";
-        print_(root->left);
-        print_(root->right);
+int findMax(Node *root) {
+    if (root == nullptr) {
+        return std::numeric_limits<int>::min();
     }
+    int res = root->data;
+    int left_ = findMax(root->left);
+    int right_ = findMax(root->right);
+    if (left_ > res) {
+        res = left_;
+    } 
+    if (right_ > res) {
+        res = right_;        
+    }
+    return res;
 }
-
-void print(Node *root,  const std::string &msg) {
-    std::cout << msg << ": ";
-    print_(root);
-    std::cout << "\n";
-}
-/* Binary Tree Node }} */
-
 
 int main (int argc, char *argv[])
 {
@@ -39,6 +43,7 @@ int main (int argc, char *argv[])
     root->right->left = new Node(6);
     root->right->right = new Node(7);
 
+    std::cout << "Max in Tree: " << findMax(root) << "\n";
     return 0;
 }
 

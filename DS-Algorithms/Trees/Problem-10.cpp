@@ -1,6 +1,7 @@
 #include <iostream>
 
 /* {{ Binary Tree Node */
+
 struct Node {
     
     int data;
@@ -28,6 +29,18 @@ void print(Node *root,  const std::string &msg) {
 }
 /* Binary Tree Node }} */
 
+int height(Node *root) {
+    if (!root) {
+        return 0;
+    }
+    int lt = height(root->left);
+    int rt = height(root->right);
+    if (lt > rt) {
+        return lt + 1;
+    } else {
+        return rt + 1;
+    }
+}
 
 int main (int argc, char *argv[])
 {
@@ -38,6 +51,8 @@ int main (int argc, char *argv[])
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+
+    std::cout << "height = " << height(root) << "\n";
 
     return 0;
 }

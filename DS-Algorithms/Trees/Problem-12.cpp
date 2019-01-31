@@ -1,4 +1,8 @@
+/*
+ * Find deepest node
+ * */
 #include <iostream>
+#include <queue>
 
 /* {{ Binary Tree Node */
 struct Node {
@@ -28,6 +32,28 @@ void print(Node *root,  const std::string &msg) {
 }
 /* Binary Tree Node }} */
 
+Node* DeepestNode(Node *root) {
+    if (!root) {
+        return nullptr;
+    }
+    Node *temp = nullptr;
+    std::queue<Node*> Q;
+    Q.push(root);
+    
+    while (!Q.empty()) {
+        temp = Q.front();
+        Q.pop();
+        
+        if (temp->left) {
+            Q.push(temp->left);
+        }
+
+        if (temp->right) {
+            Q.push(temp->right);
+        }
+    }
+    return temp;
+}
 
 int main (int argc, char *argv[])
 {
@@ -38,6 +64,14 @@ int main (int argc, char *argv[])
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+    
+    Node *dn = DeepestNode(root);
+    
+    if (dn != nullptr) {
+        std::cout << "Deepest node: " << dn << " : " << dn->data << "\n";
+    } else {
+        std::cout << "empty tree!" << std::endl;
+    }
 
     return 0;
 }

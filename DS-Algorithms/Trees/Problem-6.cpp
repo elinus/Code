@@ -1,8 +1,12 @@
+/* 
+ * Finding size of binary recursively 
+ */
+
 #include <iostream>
 
-/* {{ Binary Tree Node */
+/* Binary Tree Node */
 struct Node {
-    
+
     int data;
     Node *left;
     Node *right;
@@ -13,21 +17,12 @@ struct Node {
     }
 };
 
-void print_(Node *root) {
-    if (root) {
-        std::cout << root->data << " ";
-        print_(root->left);
-        print_(root->right);
-    }
+int SizeOfBinayTree(Node *root) {
+    if (root == nullptr) 
+        return 0;
+    else
+        return SizeOfBinayTree(root->left) + 1 + SizeOfBinayTree(root->right);
 }
-
-void print(Node *root,  const std::string &msg) {
-    std::cout << msg << ": ";
-    print_(root);
-    std::cout << "\n";
-}
-/* Binary Tree Node }} */
-
 
 int main (int argc, char *argv[])
 {
@@ -38,6 +33,8 @@ int main (int argc, char *argv[])
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+
+    std::cout << "Size of Binary Tree: " << SizeOfBinayTree(root) << "\n";
 
     return 0;
 }

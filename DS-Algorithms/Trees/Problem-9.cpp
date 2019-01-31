@@ -1,6 +1,10 @@
+/*
+ * Deleting Tree
+ * */
+
 #include <iostream>
 
-/* {{ Binary Tree Node */
+/* Binary Tree Node */
 struct Node {
     
     int data;
@@ -26,8 +30,15 @@ void print(Node *root,  const std::string &msg) {
     print_(root);
     std::cout << "\n";
 }
-/* Binary Tree Node }} */
 
+void Delete(Node *root) {
+    if (!root) {
+        return;
+    }
+    Delete(root->left);
+    Delete(root->right);
+    delete root;
+}
 
 int main (int argc, char *argv[])
 {
@@ -39,6 +50,9 @@ int main (int argc, char *argv[])
     root->right->left = new Node(6);
     root->right->right = new Node(7);
 
+    print(root, "Before deleteing");
+    Delete(root);
+    print(root, "After deleteing");
     return 0;
 }
 

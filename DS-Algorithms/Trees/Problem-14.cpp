@@ -1,4 +1,8 @@
+/*
+ * finding number of leaves
+ * */
 #include <iostream>
+#include <queue>
 
 /* {{ Binary Tree Node */
 struct Node {
@@ -28,6 +32,32 @@ void print(Node *root,  const std::string &msg) {
 }
 /* Binary Tree Node }} */
 
+int CountLeaves(Node *root) {
+    if (!root) {
+        return 0;
+    }
+    Node *temp = nullptr;
+    std::queue<Node*> Q;
+    Q.push(root);
+    int leaves = 0;
+    while (!Q.empty()) {
+        temp = Q.front();
+        Q.pop();
+
+        if (temp->left == nullptr && temp->right == nullptr) {
+            leaves++;
+        }
+        
+        if (temp->left) {
+            Q.push(temp->left);
+        }
+
+        if (temp->right) {
+            Q.push(temp->right);
+        }
+    }
+    return leaves;
+}
 
 int main (int argc, char *argv[])
 {
@@ -38,6 +68,8 @@ int main (int argc, char *argv[])
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+    
+    std::cout << "Leaves count = " << CountLeaves(root) << "\n";
 
     return 0;
 }
