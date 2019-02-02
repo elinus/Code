@@ -21,8 +21,8 @@ void WeatherData::removeObserver(Observer *o)
 
 void WeatherData::notifyObservers()
 {
-    for(std::vector<Observer*>::iterator it = observers->begin(); it != observers->end(); ++it) {
-        (*it)->update(temperature, humidity, pressure);
+    for(auto & observer : *observers) {
+        observer->update(temperature, humidity, pressure);
     }
 }
         

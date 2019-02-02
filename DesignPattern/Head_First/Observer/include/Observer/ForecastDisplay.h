@@ -10,8 +10,8 @@
 class ForecastDisplay : public Observer, public DisplayElement {
     public:
         ForecastDisplay(Subject *weatherData);
-        void update(float temperature, float humidity, float pressure);
-        void display();
+        void update(float temperature, float humidity, float pressure) override;
+        void display() override;
     private:
         float currentPressure = 29.92f;
         float lastPressure;

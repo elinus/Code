@@ -11,8 +11,8 @@
 class CurrentConditionsDisplay : public Observer, public DisplayElement {
     public:
         CurrentConditionsDisplay(Subject *weatherData);
-        void update(float temperature, float humidity, float pressure);
-        void display();
+        void update(float temperature, float humidity, float pressure) override;
+        void display() override;
     private:
         float temperature;
         float humidity;

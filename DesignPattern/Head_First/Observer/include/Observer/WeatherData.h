@@ -8,9 +8,9 @@
 class WeatherData : public Subject {
     public:
         WeatherData();
-        void registerObserver(Observer *o);
-        void removeObserver(Observer *o);
-        void notifyObservers();
+        void registerObserver(Observer *o) override;
+        void removeObserver(Observer *o) override;
+        void notifyObservers() override;
         void measurementsChanged();
         void setMeasurements(float temperature, float humidity, float pressure);
     private:

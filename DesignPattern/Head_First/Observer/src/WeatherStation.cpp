@@ -6,11 +6,11 @@
 
 int main(int argc, char *argv[])
 {
-    WeatherData *weatherData =  new WeatherData();
-    CurrentConditionsDisplay *currentDisplay = new CurrentConditionsDisplay(weatherData);
-    StatisticsDisplay *statsDisplay = new StatisticsDisplay(weatherData);
-    ForecastDisplay *forcastDisplay = new ForecastDisplay(weatherData);
-    HeatIndexDisplay *heatIndex = new HeatIndexDisplay(weatherData);
+    auto *weatherData =  new WeatherData();
+    auto *currentDisplay = new CurrentConditionsDisplay(weatherData);
+    auto *statsDisplay = new StatisticsDisplay(weatherData);
+    auto *forcastDisplay = new ForecastDisplay(weatherData);
+    auto *heatIndex = new HeatIndexDisplay(weatherData);
 
     weatherData->setMeasurements(80, 65, 30.4f);
     weatherData->setMeasurements(82, 70, 29.2f);

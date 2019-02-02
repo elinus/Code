@@ -10,8 +10,8 @@
 class HeatIndexDisplay : public Observer, public DisplayElement {
     public:
         HeatIndexDisplay(Subject *weatherData);
-        void update(float temperature, float humidity, float pressure);
-        void display();
+        void update(float temperature, float humidity, float pressure) override;
+        void display() override;
     private:
         float computeHeatIndex(float t, float rh);
         float heatIndex = 0.0f;
