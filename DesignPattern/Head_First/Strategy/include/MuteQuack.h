@@ -1,14 +1,14 @@
 #ifndef __MUTEQUACK_H__
 #define __MUTEQUACK_H__
 
-#include <iostream>
 #include <QuackBehaviour.h>
+#include <iostream>
 
 class MuteQuack : public QuackBehaviour {
-    public:
-        MuteQuack();
-        ~MuteQuack() override;
-        void quack() override;
+public:
+  MuteQuack();
+  ~MuteQuack() override;
+  void quack() override;
 };
 
 #endif

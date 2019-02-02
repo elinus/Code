@@ -2,10 +2,9 @@
 #define __QUACK_BEHAVIOUR__
 
 class QuackBehaviour {
-    public:
-        virtual ~QuackBehaviour()
-        {}
-        virtual void quack() = 0;
+public:
+  virtual ~QuackBehaviour() {}
+  virtual void quack() = 0;
 };
 
 #endif
