@@ -7,8 +7,8 @@
 class MuteQuack : public QuackBehaviour {
     public:
         MuteQuack();
-        virtual ~MuteQuack();
-        void quack();
+        ~MuteQuack() override;
+        void quack() override;
 };
 
 #endif

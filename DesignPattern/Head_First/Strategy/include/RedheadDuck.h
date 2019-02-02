@@ -9,8 +9,8 @@
 class RedheadDuck : public Duck {
     public:
         RedheadDuck();
-        ~RedheadDuck();
-        void display();
+        ~RedheadDuck() override;
+        void display() override;
 };
 
 #endif

@@ -7,8 +7,8 @@
 class Quack : public QuackBehaviour {
     public:
         Quack();
-        virtual ~Quack();
-        void quack();
+        ~Quack() override;
+        void quack() override;
 };
 
 #endif

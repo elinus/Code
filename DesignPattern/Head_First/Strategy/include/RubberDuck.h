@@ -9,8 +9,8 @@
 class RubberDuck : public Duck {
     public:
         RubberDuck();
-        ~RubberDuck();
-        void display();
+        ~RubberDuck() override;
+        void display() override;
 };
 
 #endif

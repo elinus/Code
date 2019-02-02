@@ -7,8 +7,8 @@
 class FlyRocketPowered : public FlyBehaviour {
     public:
         FlyRocketPowered();
-        virtual ~FlyRocketPowered();
-        void fly();
+        ~FlyRocketPowered() override;
+        void fly() override;
 };
 
 #endif

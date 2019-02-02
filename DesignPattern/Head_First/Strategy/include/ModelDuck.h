@@ -9,8 +9,8 @@
 class ModelDuck : public Duck {
     public:
         ModelDuck();
-        ~ModelDuck();
-        void display();
+        ~ModelDuck() override;
+        void display() override;
 };
 
 #endif

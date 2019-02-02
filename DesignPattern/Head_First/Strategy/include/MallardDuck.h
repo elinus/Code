@@ -9,8 +9,8 @@
 class MallardDuck : public Duck {
     public:
         MallardDuck();
-        ~MallardDuck();
-        void display();
+        ~MallardDuck() override;
+        void display() override;
 };
 
 #endif

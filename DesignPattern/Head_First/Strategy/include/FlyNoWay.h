@@ -7,8 +7,8 @@
 class FlyNoWay : public FlyBehaviour {
     public:
         FlyNoWay();
-        virtual ~FlyNoWay();
-        void fly();
+        ~FlyNoWay() override;
+        void fly() override;
 };
 
 #endif
