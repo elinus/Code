@@ -7,10 +7,10 @@
 class  StderrLogger : public Logger {
 public:
 	StderrLogger(int mask);
-	~StderrLogger();
+	~StderrLogger() override;
 
 	// Inherited via Logger
-	virtual void writeMessage(std::string msg) override;
+	void writeMessage(std::string msg) override;
 };
 
 #endif // !__STD_ERR_LOGGER_H__

@@ -7,10 +7,10 @@
 class  EmailLogger : public Logger {
 public:
 	EmailLogger(int mask);
-	~EmailLogger();
+	~EmailLogger() override;
 
 	// Inherited via Logger
-	virtual void writeMessage(std::string msg) override;
+	void writeMessage(std::string msg) override;
 };
 
 #endif // !__EMAIL_LOGGER_H__
