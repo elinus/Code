@@ -9,7 +9,7 @@
 int main()
 {
     Duck *duck;
-    MallardDuck *mallard = new MallardDuck();
+    auto *mallard = new MallardDuck();
     duck = mallard;
     duck->performFly();
     duck->performQuack();
@@ -18,7 +18,7 @@ int main()
     
     std::cout << "\n";
 
-    RedheadDuck *redhead = new RedheadDuck();
+    auto *redhead = new RedheadDuck();
     duck = redhead;
     duck->performFly();
     duck->performQuack();
@@ -27,7 +27,7 @@ int main()
     
     std::cout << "\n";
   
-    RubberDuck *rubber = new RubberDuck();
+    auto *rubber = new RubberDuck();
     duck = rubber;
     duck->performFly();
     duck->performQuack();
@@ -36,7 +36,7 @@ int main()
     
     std::cout << "\n";
 
-    DecoyDuck *decoy = new DecoyDuck();
+    auto *decoy = new DecoyDuck();
     duck = decoy;
     duck->performFly();
     duck->performQuack();
@@ -45,7 +45,7 @@ int main()
     
     std::cout << "\n";
     
-    ModelDuck *model = new ModelDuck();
+    auto *model = new ModelDuck();
     duck = model;
     duck->performFly();
     duck->setFlyBehaviour(new FlyRocketPowered());
