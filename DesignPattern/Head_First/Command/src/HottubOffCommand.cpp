@@ -1,16 +1,10 @@
 #include <Command/HottubOffCommand.h>
 
-HottubOffCommand::HottubOffCommand(Hottub *hottub) {
-    this->hottub = hottub;
+HottubOffCommand::HottubOffCommand(Hottub *hottub) { this->hottub = hottub; }
+
+void HottubOffCommand::execute() {
+  hottub->cool();
+  hottub->off();
 }
 
-void HottubOffCommand::execute()
-{
-    hottub->cool();
-    hottub->off();
-}
-
-std::string HottubOffCommand::toString()
-{
-    return "HottubOffCommand";
-}
+std::string HottubOffCommand::toString() { return "HottubOffCommand"; }

@@ -4,12 +4,13 @@
 #include <string>
 
 class Singleton {
-    public:
-        static Singleton* getInstance();
-        std::string getDescription();
-    private:
-        static Singleton *instance;
-        Singleton();
+public:
+  static Singleton *getInstance();
+  std::string getDescription();
+
+private:
+  static Singleton *instance;
+  Singleton();
 };
 
 #endif

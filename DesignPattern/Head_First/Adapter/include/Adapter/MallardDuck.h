@@ -5,9 +5,9 @@
 #include <iostream>
 
 class MallardDuck : public Duck {
-    public:
-        void quack() override;
-        void fly() override;
+public:
+  void quack() override;
+  void fly() override;
 };
 
 #endif

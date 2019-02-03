@@ -6,12 +6,13 @@
 #include <string>
 
 class StereoOffCommand : public Command {
-    public:
-        StereoOffCommand(Stereo *stereo);
-        void execute() override;
-        std::string toString() override;
-    private:
-        Stereo *stereo;
+public:
+  StereoOffCommand(Stereo *stereo);
+  void execute() override;
+  std::string toString() override;
+
+private:
+  Stereo *stereo;
 };
 
 #endif /* __STEREOOFFCOMMAND_H__ */

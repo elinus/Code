@@ -5,11 +5,12 @@
 #include <Command/TV.h>
 
 class TVOnCommand : public Command {
-    public:
-        TVOnCommand(TV *tv);
-        void execute();
-    private:
-        TV *tv;
+public:
+  TVOnCommand(TV *tv);
+  void execute();
+
+private:
+  TV *tv;
 };
 
 #endif /* __TVONCOMMAND_H__ */

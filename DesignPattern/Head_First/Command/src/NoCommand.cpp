@@ -1,9 +1,5 @@
 #include <Command/NoCommand.h>
 
-void NoCommand::execute()
-{}
+void NoCommand::execute() {}
 
-std::string NoCommand::toString()
-{
-    return "NoCommand";
-}
+std::string NoCommand::toString() { return "NoCommand"; }

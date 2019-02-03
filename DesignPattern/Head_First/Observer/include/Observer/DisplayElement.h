@@ -4,8 +4,8 @@
 #include <iostream>
 
 class DisplayElement {
-    public:
-        virtual void display() = 0;
+public:
+  virtual void display() = 0;
 };
 
 #endif

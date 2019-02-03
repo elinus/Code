@@ -1,16 +1,7 @@
 #include <Command/LightOffCommand.h>
 
-LightOffCommand::LightOffCommand(Light *light)
-{
-    this->light = light;
-}
+LightOffCommand::LightOffCommand(Light *light) { this->light = light; }
 
-void LightOffCommand::execute()
-{
-    light->off();
-}
+void LightOffCommand::execute() { light->off(); }
 
-std::string LightOffCommand::toString()
-{
-    return "LightOffCommand";
-}
+std::string LightOffCommand::toString() { return "LightOffCommand"; }

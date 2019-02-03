@@ -6,28 +6,29 @@
 #include <string>
 
 class GumballMachine {
-    public:
-        GumballMachine(int numberGumballs);
-        void insertQuarter();
-        void ejectQuarter();
-        void turnCrank();
-        void releaseBall();
-        int getCount();
-        void refill(int count);
-        void setState(State *state);
-        State* getState();
-        State* getSoldOutState();
-        State* getNoQuarterState();
-        State* getHasQuarterState();
-        State* getSoldState();
-        std::string toString();
-    private:
-        State *soldOutState;
-        State *noQuarterState;
-        State *hasQuarterState;
-        State *soldState;
-        State *state;
-        int count = 0;
+public:
+  GumballMachine(int numberGumballs);
+  void insertQuarter();
+  void ejectQuarter();
+  void turnCrank();
+  void releaseBall();
+  int getCount();
+  void refill(int count);
+  void setState(State *state);
+  State *getState();
+  State *getSoldOutState();
+  State *getNoQuarterState();
+  State *getHasQuarterState();
+  State *getSoldState();
+  std::string toString();
+
+private:
+  State *soldOutState;
+  State *noQuarterState;
+  State *hasQuarterState;
+  State *soldState;
+  State *state;
+  int count = 0;
 };
 
 #endif

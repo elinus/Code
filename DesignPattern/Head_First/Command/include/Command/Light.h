@@ -4,12 +4,13 @@
 #include <iostream>
 
 class Light {
-    public:
-        Light(std::string location);
-        void on();
-        void off();
-    private:
-        std::string location;
+public:
+  Light(std::string location);
+  void on();
+  void off();
+
+private:
+  std::string location;
 };
 
 #endif /* __LIGHT_H__ */

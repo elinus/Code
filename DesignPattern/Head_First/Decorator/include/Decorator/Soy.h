@@ -4,12 +4,13 @@
 #include <Decorator/CondimentDecorator.h>
 
 class Soy : public CondimentDecorator {
-    public:
-        Soy(Beverage *beverage);
-        std::string getDescription() override;
-        double cost() override;
-    private:
-        Beverage *beverage;
+public:
+  Soy(Beverage *beverage);
+  std::string getDescription() override;
+  double cost() override;
+
+private:
+  Beverage *beverage;
 };
 
 #endif

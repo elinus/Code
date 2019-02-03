@@ -8,21 +8,22 @@
 class Amplifier;
 
 class CdPlayer {
-    public:
-        CdPlayer(std::string description, Amplifier *amplifier);
-        void on();
-        void off();
-        void eject();
-        void play(std::string title);
-        void play(int track);
-        void stop();
-        void pause();
-        std::string toString();
-    private:
-        std::string description;
-        int currentTrack;
-        Amplifier *amplifier;
-        std::string title;
+public:
+  CdPlayer(std::string description, Amplifier *amplifier);
+  void on();
+  void off();
+  void eject();
+  void play(std::string title);
+  void play(int track);
+  void stop();
+  void pause();
+  std::string toString();
+
+private:
+  std::string description;
+  int currentTrack;
+  Amplifier *amplifier;
+  std::string title;
 };
 
 #endif /* __CDPLAYER_H__ */

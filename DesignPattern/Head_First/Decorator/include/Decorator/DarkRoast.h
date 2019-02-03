@@ -4,9 +4,9 @@
 #include <Decorator/Beverage.h>
 
 class DarkRoast : public Beverage {
-    public:
-        DarkRoast();
-        double cost() override;
+public:
+  DarkRoast();
+  double cost() override;
 };
 
 #endif

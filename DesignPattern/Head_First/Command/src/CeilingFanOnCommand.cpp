@@ -1,16 +1,9 @@
 #include <Command/CeilingFanOnCommand.h>
 
-CeilingFanOnCommand::CeilingFanOnCommand(CeilingFan *ceilingFan)
-{
-    this->ceilingFan = ceilingFan;
+CeilingFanOnCommand::CeilingFanOnCommand(CeilingFan *ceilingFan) {
+  this->ceilingFan = ceilingFan;
 }
 
-void CeilingFanOnCommand::execute()
-{
-    ceilingFan->high();
-}
+void CeilingFanOnCommand::execute() { ceilingFan->high(); }
 
-std::string CeilingFanOnCommand::toString()
-{
-    return "CeilingFanOnCommand";
-}
+std::string CeilingFanOnCommand::toString() { return "CeilingFanOnCommand"; }

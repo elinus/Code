@@ -6,16 +6,17 @@
 #include <string>
 
 class Projector {
-    public:
-        Projector(std::string description, DvdPlayer *dvdPlayer);
-        void on();
-        void off();
-        void wideScreenMode();
-        void tvMode();
-        std::string toString();
-    private:
-        std::string description;
-        DvdPlayer *dvdPlayer;
+public:
+  Projector(std::string description, DvdPlayer *dvdPlayer);
+  void on();
+  void off();
+  void wideScreenMode();
+  void tvMode();
+  std::string toString();
+
+private:
+  std::string description;
+  DvdPlayer *dvdPlayer;
 };
 
 #endif /* __PROJECTOR_H__ */

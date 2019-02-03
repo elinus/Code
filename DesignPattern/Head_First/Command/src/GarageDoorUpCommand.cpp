@@ -1,15 +1,9 @@
 #include <Command/GarageDoorUpCommand.h>
 
-GarageDoorUpCommand::GarageDoorUpCommand(GarageDoor *garageDoor){
-    this->garageDoor = garageDoor;
+GarageDoorUpCommand::GarageDoorUpCommand(GarageDoor *garageDoor) {
+  this->garageDoor = garageDoor;
 }
 
-void GarageDoorUpCommand::execute()
-{
-    garageDoor->up();
-}
+void GarageDoorUpCommand::execute() { garageDoor->up(); }
 
-std::string GarageDoorUpCommand::toString()
-{
-    return "GarageDoorUpCommand";
-}
+std::string GarageDoorUpCommand::toString() { return "GarageDoorUpCommand"; }

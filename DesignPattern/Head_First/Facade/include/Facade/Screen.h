@@ -5,13 +5,14 @@
 #include <string>
 
 class Screen {
-    public:
-        Screen(std::string description);
-        void up();
-        void down();    
-        std::string toString();
-    private:
-        std::string description;
+public:
+  Screen(std::string description);
+  void up();
+  void down();
+  std::string toString();
+
+private:
+  std::string description;
 };
 
 #endif /* __SCREEN_H__ */

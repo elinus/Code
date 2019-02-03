@@ -5,14 +5,15 @@
 #include <string>
 
 class TV {
-    public:
-        TV(std::string location);
-        void on();
-        void off();
-        void setInputChannel();
-    private:
-        std::string location;
-        int channel;
+public:
+  TV(std::string location);
+  void on();
+  void off();
+  void setInputChannel();
+
+private:
+  std::string location;
+  int channel;
 };
 
 #endif /* __TV_H__ */

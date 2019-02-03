@@ -8,18 +8,19 @@
 class Amplifier;
 
 class Tuner {
-    public:
-        Tuner(std::string description, Amplifier *amplifier);
-        void on();
-        void off();
-        void setFrequency(double frequency);
-        void setAm();
-        void setFm();
-        std::string toString();
-    private:
-        std::string description;
-        Amplifier *amplifier;
-        double frequency;
+public:
+  Tuner(std::string description, Amplifier *amplifier);
+  void on();
+  void off();
+  void setFrequency(double frequency);
+  void setAm();
+  void setFm();
+  std::string toString();
+
+private:
+  std::string description;
+  Amplifier *amplifier;
+  double frequency;
 };
 
 #endif /* __TUNER_H__ */

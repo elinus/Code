@@ -6,15 +6,16 @@
 #include <string>
 
 class RemoteControl {
-    public:
-        RemoteControl();
-        void setCommand(int slot, Command *onCommand, Command *offCommand);
-        void onButtonWasPushed(int slot);
-        void offButtonWasPushed(int slot);
-        std::string toString();
-    private:
-        Command** onCommands;
-        Command** offCommands;
+public:
+  RemoteControl();
+  void setCommand(int slot, Command *onCommand, Command *offCommand);
+  void onButtonWasPushed(int slot);
+  void offButtonWasPushed(int slot);
+  std::string toString();
+
+private:
+  Command **onCommands;
+  Command **offCommands;
 };
 
 #endif /* __REMOTECONTROL_H__ */

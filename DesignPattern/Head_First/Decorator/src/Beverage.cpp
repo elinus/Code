@@ -1,6 +1,3 @@
 #include <Decorator/Beverage.h>
 
-std::string Beverage::getDescription()
-{
-    return description;
-}
+std::string Beverage::getDescription() { return description; }

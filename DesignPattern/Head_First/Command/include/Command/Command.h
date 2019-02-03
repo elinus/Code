@@ -4,9 +4,9 @@
 #include <string>
 
 class Command {
-    public:
-        virtual void execute() = 0;
-        virtual std::string toString() = 0;
+public:
+  virtual void execute() = 0;
+  virtual std::string toString() = 0;
 };
 
 #endif /* __COMMAND_H__ */

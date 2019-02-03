@@ -4,13 +4,13 @@
 #include <iostream>
 
 class CaffeineBeverage {
-    public:
-        virtual void brew() = 0;
-        virtual void addCondiments() = 0;
-        void boilWater();
-        void pourInCup();
-        void prepareRecipe();
-        virtual bool customerWantsCondiments();
+public:
+  virtual void brew() = 0;
+  virtual void addCondiments() = 0;
+  void boilWater();
+  void pourInCup();
+  void prepareRecipe();
+  virtual bool customerWantsCondiments();
 };
 
 #endif

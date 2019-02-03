@@ -6,12 +6,13 @@
 #include <string>
 
 class LightOffCommand : public Command {
-    public:
-        LightOffCommand(Light *light);
-        void execute() override;
-        std::string toString() override;
-    private:
-        Light *light;
+public:
+  LightOffCommand(Light *light);
+  void execute() override;
+  std::string toString() override;
+
+private:
+  Light *light;
 };
 
 #endif /* __LIGHTOFFCOMMAND_H__ */

@@ -5,13 +5,13 @@
 #include <Adapter/Turkey.h>
 
 class TurkeyAdapter : public Duck {
-    public:
-        TurkeyAdapter(Turkey *turkey);
-        void quack() override;
-        void fly() override;
-    private:
-        Turkey *turkey;
+public:
+  TurkeyAdapter(Turkey *turkey);
+  void quack() override;
+  void fly() override;
 
+private:
+  Turkey *turkey;
 };
 
 #endif

@@ -1,16 +1,9 @@
 #include <Decorator/Milk.h>
 
-Milk::Milk(Beverage *beverage)
-{
-    this->beverage = beverage;
+Milk::Milk(Beverage *beverage) { this->beverage = beverage; }
+
+std::string Milk::getDescription() {
+  return beverage->getDescription() + ", Milk";
 }
 
-std::string Milk::getDescription()
-{
-    return beverage->getDescription() + ", Milk";
-}
-
-double Milk::cost()
-{
-    return beverage->cost() + 0.10;
-}
+double Milk::cost() { return beverage->cost() + 0.10; }

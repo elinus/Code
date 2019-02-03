@@ -4,8 +4,8 @@
 #include <Factory/Pizza.h>
 
 class VeggiePizza : public Pizza {
-    public:
-        VeggiePizza();
+public:
+  VeggiePizza();
 };
 
 #endif // !__VEGGIE_PIZZA_H__

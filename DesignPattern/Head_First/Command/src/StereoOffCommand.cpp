@@ -1,16 +1,7 @@
 #include <Command/StereoOffCommand.h>
 
-StereoOffCommand::StereoOffCommand(Stereo *stereo)
-{
-    this->stereo = stereo;
-}
+StereoOffCommand::StereoOffCommand(Stereo *stereo) { this->stereo = stereo; }
 
-void StereoOffCommand::execute()
-{
-    stereo->off();
-}
+void StereoOffCommand::execute() { stereo->off(); }
 
-std::string StereoOffCommand::toString()
-{
-    return "StereoOffCommand";
-}
+std::string StereoOffCommand::toString() { return "StereoOffCommand"; }

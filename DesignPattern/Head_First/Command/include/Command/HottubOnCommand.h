@@ -6,12 +6,13 @@
 #include <string>
 
 class HottubOnCommand : public Command {
-    public:
-        HottubOnCommand(Hottub *hottub);
-        void execute() override;
-        std::string toString() override;
-    private:
-        Hottub *hottub;
+public:
+  HottubOnCommand(Hottub *hottub);
+  void execute() override;
+  std::string toString() override;
+
+private:
+  Hottub *hottub;
 };
 
 #endif /* __HOTTUBONCOMMAND_H__ */

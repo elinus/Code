@@ -4,12 +4,13 @@
 #include <Decorator/CondimentDecorator.h>
 
 class Mocha : public CondimentDecorator {
-    public:
-        Mocha(Beverage *beverage);
-        std::string getDescription() override;
-        double cost() override;
-    private:
-        Beverage *beverage;
+public:
+  Mocha(Beverage *beverage);
+  std::string getDescription() override;
+  double cost() override;
+
+private:
+  Beverage *beverage;
 };
 
 #endif

@@ -1,20 +1,16 @@
 #include <Factory/PizzaStore.h>
 
-PizzaStore::PizzaStore(SimplePizzaFactory *factory)
-{
-    this->factory = factory;
-}
+PizzaStore::PizzaStore(SimplePizzaFactory *factory) { this->factory = factory; }
 
-Pizza * PizzaStore::orderPizza(std::string type)
-{
-    Pizza *pizza;
+Pizza *PizzaStore::orderPizza(std::string type) {
+  Pizza *pizza;
 
-    pizza = factory->createPizza(type);
+  pizza = factory->createPizza(type);
 
-    pizza->prepare();
-    pizza->bake();
-    pizza->cut();
-    pizza->box();
+  pizza->prepare();
+  pizza->bake();
+  pizza->cut();
+  pizza->box();
 
-    return pizza;
+  return pizza;
 }

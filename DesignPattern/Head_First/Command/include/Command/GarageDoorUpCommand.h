@@ -6,12 +6,13 @@
 #include <string>
 
 class GarageDoorUpCommand : public Command {
-    public:
-        GarageDoorUpCommand(GarageDoor *garageDoor);
-        void execute() override;
-        std::string toString() override;
-    private:
-        GarageDoor *garageDoor;
+public:
+  GarageDoorUpCommand(GarageDoor *garageDoor);
+  void execute() override;
+  std::string toString() override;
+
+private:
+  GarageDoor *garageDoor;
 };
 
 #endif /* __GARAGEDOORUPCOMMAND_H__ */
