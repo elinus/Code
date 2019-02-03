@@ -12,8 +12,8 @@ void testDuck(Duck *duck)
 
 int main(int argc, char *argv[])
 {
-    MallardDuck *duck = new MallardDuck();
-    WildTurkey *turkey = new WildTurkey();
+    auto *duck = new MallardDuck();
+    auto *turkey = new WildTurkey();
     Duck *turkeyAdapter = new TurkeyAdapter(turkey);
     
     std::cout << "The Turkey says..." << std::endl;

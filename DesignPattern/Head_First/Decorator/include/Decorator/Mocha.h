@@ -6,8 +6,8 @@
 class Mocha : public CondimentDecorator {
     public:
         Mocha(Beverage *beverage);
-        std::string getDescription();
-        double cost();
+        std::string getDescription() override;
+        double cost() override;
     private:
         Beverage *beverage;
 };

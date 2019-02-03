@@ -8,8 +8,8 @@
 class GarageDoorUpCommand : public Command {
     public:
         GarageDoorUpCommand(GarageDoor *garageDoor);
-        void execute();
-        std::string toString();
+        void execute() override;
+        std::string toString() override;
     private:
         GarageDoor *garageDoor;
 };

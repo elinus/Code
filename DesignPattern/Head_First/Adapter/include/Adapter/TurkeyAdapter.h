@@ -7,8 +7,8 @@
 class TurkeyAdapter : public Duck {
     public:
         TurkeyAdapter(Turkey *turkey);
-        void quack();
-        void fly();
+        void quack() override;
+        void fly() override;
     private:
         Turkey *turkey;
 

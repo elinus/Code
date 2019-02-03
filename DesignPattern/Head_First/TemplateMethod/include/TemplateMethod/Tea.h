@@ -6,9 +6,9 @@
 
 class Tea : public CaffeineBeverage {
     public:
-        void brew();
-        void addCondiments();
-        bool customerWantsCondiments();
+        void brew() override;
+        void addCondiments() override;
+        bool customerWantsCondiments() override;
     private:
         std::string getUserInput();
 };

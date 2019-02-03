@@ -8,8 +8,8 @@
 class CeilingFanOnCommand : public Command {
     public:
         CeilingFanOnCommand(CeilingFan *ceilingFan);
-        void execute();
-        std::string toString();
+        void execute() override;
+        std::string toString() override;
     private:
         CeilingFan *ceilingFan;
 };

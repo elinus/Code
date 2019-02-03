@@ -8,8 +8,8 @@
 class HottubOffCommand : public Command {
     public:
         HottubOffCommand(Hottub *hottub);
-        void execute();
-        std::string toString();
+        void execute() override;
+        std::string toString() override;
     private:
         Hottub *hottub;
 };

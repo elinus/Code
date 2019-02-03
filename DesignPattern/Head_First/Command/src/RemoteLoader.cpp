@@ -14,23 +14,23 @@
 
 int main (int argc, char *argv[])
 {
-    RemoteControl *remoteControl = new RemoteControl();
+    auto *remoteControl = new RemoteControl();
     Light *light = new Light("Kitchen");
     Light *livingRoomLight = new Light("Livingroom");
     GarageDoor *garageDoor = new GarageDoor("");
     CeilingFan *ceilingFan = new CeilingFan("Living room");
 
 
-    LightOnCommand *lightOn = new LightOnCommand(light);
-    LightOffCommand *lightOff = new LightOffCommand(light);
-    LivingroomLightOnCommand *livingRoomLightOn 
+    auto *lightOn = new LightOnCommand(light);
+    auto *lightOff = new LightOffCommand(light);
+    auto *livingRoomLightOn 
         = new LivingroomLightOnCommand(livingRoomLight);
-    LivingroomLightOffCommand *livingRoomLightOff 
+    auto *livingRoomLightOff 
         = new LivingroomLightOffCommand(livingRoomLight);
-    GarageDoorUpCommand *garageDoorUp = new GarageDoorUpCommand(garageDoor);
-    GarageDoorDownCommand *garageDoorDown = new GarageDoorDownCommand(garageDoor);
-    CeilingFanOnCommand *ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
-    CeilingFanOffCommand *ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+    auto *garageDoorUp = new GarageDoorUpCommand(garageDoor);
+    auto *garageDoorDown = new GarageDoorDownCommand(garageDoor);
+    auto *ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+    auto *ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
 
     remoteControl->setCommand(0, lightOn, lightOff);
     remoteControl->setCommand(1, livingRoomLightOn, livingRoomLightOff);

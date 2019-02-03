@@ -6,8 +6,8 @@
 
 class WildTurkey : public Turkey {
     public:
-        void gobble();
-        void fly();
+        void gobble() override;
+        void fly() override;
 };
 
 #endif

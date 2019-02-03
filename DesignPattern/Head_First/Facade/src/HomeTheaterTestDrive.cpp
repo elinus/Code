@@ -20,7 +20,7 @@ int main (int argc, char *argv[])
     Screen *screen = new Screen("Theater Screen");
     PopcornPopper *popper = new PopcornPopper("Popcorn Popper");
 
-    HomeTheaterFacade *homeTheater = new HomeTheaterFacade(amp, 
+    auto *homeTheater = new HomeTheaterFacade(amp, 
             tuner, dvd, cd, projector, lights, screen, popper);
 
     homeTheater->watchMovie("Raiders of the Lost Ark");

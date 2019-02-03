@@ -6,8 +6,8 @@
 class Whip : public CondimentDecorator {
     public:
         Whip(Beverage *beverage);
-        std::string getDescription();
-        double cost();
+        std::string getDescription() override;
+        double cost() override;
     private:
         Beverage *beverage;
 };

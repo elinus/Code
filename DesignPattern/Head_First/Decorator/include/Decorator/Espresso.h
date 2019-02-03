@@ -6,7 +6,7 @@
 class Espresso : public Beverage {
     public:
         Espresso();
-        double cost();
+        double cost() override;
 };
 
 #endif

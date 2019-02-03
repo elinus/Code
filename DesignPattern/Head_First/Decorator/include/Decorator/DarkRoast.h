@@ -6,7 +6,7 @@
 class DarkRoast : public Beverage {
     public:
         DarkRoast();
-        double cost();
+        double cost() override;
 };
 
 #endif

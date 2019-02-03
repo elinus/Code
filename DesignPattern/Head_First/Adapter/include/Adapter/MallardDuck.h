@@ -6,8 +6,8 @@
 
 class MallardDuck : public Duck {
     public:
-        void quack();
-        void fly();
+        void quack() override;
+        void fly() override;
 };
 
 #endif

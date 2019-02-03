@@ -8,8 +8,8 @@
 class LightOnCommand : public Command {
     public:
         LightOnCommand(Light *light);
-        void execute();
-        std::string toString();
+        void execute() override;
+        std::string toString() override;
     private:
         Light *light;
 };

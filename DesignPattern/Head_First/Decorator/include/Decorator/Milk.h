@@ -6,8 +6,8 @@
 class Milk : public CondimentDecorator {
     public:
         Milk(Beverage *beverage);
-        std::string getDescription();
-        double cost();
+        std::string getDescription() override;
+        double cost() override;
     private:
         Beverage *beverage;
 };

@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    GumballMachine *gumballMachine = new GumballMachine(2);
+    auto *gumballMachine = new GumballMachine(2);
 
     std::cout << gumballMachine->toString() << std::endl;
 

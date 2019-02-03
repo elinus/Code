@@ -3,8 +3,8 @@
 
 int main(int argc, char *argv[])
 {
-    Tea *tea = new Tea();
-    Coffee *coffee = new Coffee();
+    auto *tea = new Tea();
+    auto *coffee = new Coffee();
 
     std::cout << "\nMaking tea..." << std::endl;
     tea->prepareRecipe();

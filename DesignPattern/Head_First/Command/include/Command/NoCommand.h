@@ -6,8 +6,8 @@
 
 class NoCommand : public Command {
     public:
-        void execute();
-        std::string toString();
+        void execute() override;
+        std::string toString() override;
 };
 
 #endif /* __NOCOMMAND_H__ */

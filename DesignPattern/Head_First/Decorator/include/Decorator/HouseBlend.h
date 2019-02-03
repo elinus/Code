@@ -6,7 +6,7 @@
 class HouseBlend : public Beverage {
     public:
         HouseBlend();
-        double cost();
+        double cost() override;
 };
 
 #endif

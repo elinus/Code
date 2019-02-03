@@ -5,7 +5,7 @@
 
 class CondimentDecorator : public Beverage {
     public:
-        virtual std::string getDescription() = 0;
+        std::string getDescription() override = 0;
 };
 
 #endif
