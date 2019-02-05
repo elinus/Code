@@ -5,7 +5,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 set(CMAKE_CONFIGURATION_TYPE Debug)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-# set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")
 
 project(Singleton)
@@ -35,6 +35,10 @@ add_compile_options(
     )
 
 include_directories(include)
+
+#add_definitions(-DSTATIC_LOCAL_VARIABLE_SINGLETON)
+#add_definitions(-DNO_DESTROY)
+add_definitions(-DRESET_INSTANCE)
 
 add_executable(
             a.out

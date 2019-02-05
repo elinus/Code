@@ -5,12 +5,17 @@
 
 class ThreadPoolManager {
 public:
+#ifdef NO_DESTROY
   static ThreadPoolManager *instance_;
+#endif
   ~ThreadPoolManager();
   static ThreadPoolManager *GetInstance();
   void AddJob();
   void ExecuteJob();
-
+#ifdef RESET_INSTANCE
+  static ThreadPoolManager *instance_;
+  static void ResetInstance();
+#endif
 private:
   ThreadPoolManager();
   ThreadPoolManager(const ThreadPoolManager &other) = delete;

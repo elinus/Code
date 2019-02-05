@@ -29,5 +29,8 @@ int main() {
   std::cout << "Exiting main [tid = " << std::this_thread::get_id() << "]"
             << std::endl;
 
+#ifdef RESET_INSTANCE
+  ThreadPoolManager::ResetInstance();
+#endif
   return 0;
 }
