@@ -10,7 +10,8 @@ project(Adapter)
 include_directories(include)
 
 add_executable(
-            Adapter
+            a.out
+#            Adapter
 
             src/MallardDuck.cpp
             src/WildTurkey.cpp

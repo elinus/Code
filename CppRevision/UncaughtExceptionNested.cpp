@@ -2,19 +2,17 @@
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
+  try {
     try {
-        try {
-            throw 1;
-        } catch (int e) {
-            cout << "Int exception." << endl;
-            throw;
-        }     
-    } catch (...) {
-        cout << "Error occured." << endl;
+      throw 1;
+    } catch (int e) {
+      cout << "Int exception." << endl;
+      throw;
     }
+  } catch (...) {
+    cout << "Error occured." << endl;
+  }
 
-    return 0;
+  return 0;
 }
-

@@ -1,16 +1,14 @@
 #include "StopWatch.h"
+#include <chrono>
 #include <iostream>
 #include <thread>
-#include <chrono>
 
-int main (int argc, char *argv[])
-{
-    StopWatch swObj;
-    
-    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+int main(int argc, char *argv[]) {
+  StopWatch swObj;
 
-    std::cout << swObj.ElapsedMs() << std::endl;
+  std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
-    return 0;
+  std::cout << swObj.ElapsedMs() << std::endl;
+
+  return 0;
 }
-

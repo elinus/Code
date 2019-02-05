@@ -4,8 +4,8 @@
 #include <iostream>
 
 class Helloworld {
-    public:
-        void sayHello(int n);
+public:
+  void sayHello(int n);
 };
 
 #endif

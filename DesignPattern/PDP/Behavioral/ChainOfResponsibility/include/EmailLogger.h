@@ -4,13 +4,13 @@
 #include "Logger.h"
 #include <iostream>
 
-class  EmailLogger : public Logger {
+class EmailLogger : public Logger {
 public:
-	EmailLogger(int mask);
-	~EmailLogger() override;
+  EmailLogger(int mask);
+  ~EmailLogger() override;
 
-	// Inherited via Logger
-	void writeMessage(std::string msg) override;
+  // Inherited via Logger
+  void writeMessage(std::string msg) override;
 };
 
 #endif // !__EMAIL_LOGGER_H__

@@ -5,12 +5,11 @@
 #include <iostream>
 
 class QuickSort : public SortInterface {
-    public:
-        QuickSort();
-        virtual ~QuickSort();
-        // Inherited via SortInterface
-        virtual void sort(int array[]) override;
-
+public:
+  QuickSort();
+  virtual ~QuickSort();
+  // Inherited via SortInterface
+  virtual void sort(int array[]) override;
 };
 
 #endif // !__QUICK_SORT_H__
