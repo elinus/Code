@@ -1,55 +1,28 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
 int main() {
-
-  ios_base::sync_with_stdio(false);
-  // cin.tie(NULL);
-
-  int t, n;
+  int t;
   cin >> t;
-
   while (t--) {
-    int arr[10] = {0};
-    int mini = INT_MAX;
-    int maxi = INT_MIN;
+    string s;
+    cin >> s;
+    int n = s.length();
+    char char_arr[n + 1];
+    strcpy(char_arr, s.c_str());
 
-    int rem;
-    int quo;
-    cin >> n;
+    sort(char_arr, char_arr + n);
 
-    while (n) {
-      int rem = n % 10;
-      int quo = n / 10;
-      arr[rem]++;
-      if (rem <= mini) {
-        mini = rem;
-      }
-      if (rem >= maxi) {
-        maxi = rem;
-      }
-      n = quo;
-    }
-
-    int flag = 0;
-    if (mini == maxi && arr[mini] != 1) {
-      flag = 1;
-    } else {
-      for (int i = mini; i < maxi; i++) {
-        if (arr[i] != 1) {
-          flag = 1;
-          break;
-        }
+    int p = 0;
+    for (int i = 1; i < n; i++) {
+      if (char_arr[i] != char_arr[i - 1] + 1) {
+        p++;
+        cout << "NO" << endl;
+        break;
       }
     }
-
-    if (!flag) {
-      cout << "YES\n";
-    } else {
-      cout << "NO\n";
+    if (p == 0) {
+      cout << "YES" << endl;
     }
   }
-
-  return 0;
 }
