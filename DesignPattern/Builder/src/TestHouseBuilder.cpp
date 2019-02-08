@@ -6,7 +6,7 @@
 
 int main() {
   HouseBuilder *builder = new ConcreteHouseBuilder();
-  HouseBuildDirector *director = new HouseBuildDirector(builder);
+  auto *director = new HouseBuildDirector(builder);
   std::cout << director->construct() << std::endl;
 
   builder = new WoodenHouseBuilder();

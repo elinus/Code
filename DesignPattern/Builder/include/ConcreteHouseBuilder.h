@@ -8,11 +8,11 @@
 class ConcreteHouseBuilder : public HouseBuilder {
 public:
   ConcreteHouseBuilder();
-  ~ConcreteHouseBuilder();
-  HouseBuilder *buildFloor();
-  HouseBuilder *buildWall();
-  HouseBuilder *buildRoof();
-  House *build();
+  ~ConcreteHouseBuilder() override;
+  HouseBuilder *buildFloor() override;
+  HouseBuilder *buildWall() override;
+  HouseBuilder *buildRoof() override;
+  House *build() override;
 
 private:
   House *house_;
