@@ -39,8 +39,13 @@ include_directories(include)
 add_executable(
             a.out
 
-            src/Robot.cpp
-            src/OldRobotBuilder.cpp
-            src/RobotEngineer.cpp
-            src/TestRobotBuilder.cpp
+            #src/Robot.cpp
+            #src/OldRobotBuilder.cpp
+            #src/RobotEngineer.cpp
+            #src/TestRobotBuilder.cpp
+            src/House.cpp
+            src/ConcreteHouseBuilder.cpp
+            src/WoodenHouseBuilder.cpp
+            src/HouseBuildDirector.cpp
+            src/TestHouseBuilder.cpp
 )
