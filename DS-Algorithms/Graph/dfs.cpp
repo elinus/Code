@@ -10,28 +10,25 @@ public:
 
   void AddEdge(int u, int v) { adj[u].push_back(v); }
 
-  void bfs(int s) {
+  void dfs(int v) {
     vector<bool> marked(V, false);
     list<int> Q;
-
-    marked[s] = true;
-    Q.push_back(s);
-    while (!Q.empty()) {
-      s = Q.front();
-      cout << s << " ";
-      Q.pop_front();
-      for (auto it = adj[s].begin(); it != adj[s].end(); ++it) {
-        if (!marked[*it]) {
-          marked[*it] = true;
-          Q.push_back(*it);
-        }
-      }
-    }
+    dfs_util(v, marked);
   }
 
 private:
   int V;
   list<int> *adj;
+
+  void dfs_util(int v, vector<bool> &marked) {
+    marked[v] = true;
+    cout << v << " ";
+    for (auto it = adj[v].begin(); it != adj[v].end(); ++it) {
+      if (!marked[*it]) {
+        dfs_util(*it, marked);
+      }
+    }
+  }
 };
 
 int main() {
@@ -44,8 +41,8 @@ int main() {
   g.AddEdge(2, 3);
   g.AddEdge(3, 3);
 
-  cout << "bfs: ";
-  g.bfs(2);
+  cout << "dfs: ";
+  g.dfs(2);
   cout << "\n";
 
   return 0;
