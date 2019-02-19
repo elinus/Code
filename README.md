@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/elinus/Code.svg?branch=master)](https://travis-ci.com/elinus/Code)
+[<img alt="Build Status" src="https://travis-ci.com/elinus/Code.svg?branch=master" height="20">][travis-url]
 
 # Idea is to code on daily basis. 
 
