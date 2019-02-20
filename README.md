@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/elinus/Code.svg?branch=master)](https://travis-ci.com/elinus/Code) ![repo-size](https://img.shields.io/github/repo-size/elinus/Code.svg) ![code-size](https://img.shields.io/github/languages/code-size/elinus/Code.svg)
+[![Build Status](https://travis-ci.com/elinus/Code.svg?branch=master)](https://travis-ci.com/elinus/Code) ![repo-size](https://img.shields.io/github/repo-size/elinus/Code.svg) ![code-size](https://img.shields.io/github/languages/code-size/elinus/Code.svg) ![Pull requests](https://img.shields.io/github/issues-pr/elinus/Code.svg)
 
 # Idea is to code on daily basis. 
 
