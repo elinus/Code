@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/elinus/Code.svg?branch=master)](https://travis-ci.com/elinus/Code)
+[![Build Status](https://travis-ci.com/elinus/Code.svg?branch=master)](https://travis-ci.com/elinus/Code) [![Repo Size](https://img.shields.io/github/repo-size/elinus/Code.svg)]
 
 # Idea is to code on daily basis. 
 
