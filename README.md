@@ -30,4 +30,4 @@
     valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./a.out
 
 ## Important links
-![50 DS & Algo Interview Ques.](https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0)
+https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0
