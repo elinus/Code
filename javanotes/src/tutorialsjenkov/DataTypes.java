@@ -9,7 +9,7 @@
  * @Complexity:
  */
 
-package JAVA;
+package tutorialsjenkov;
 
 public class DataTypes {
 
