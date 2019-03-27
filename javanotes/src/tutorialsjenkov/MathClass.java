@@ -9,7 +9,7 @@
  * @Complexity:
  */
 
-package JAVA;
+package tutorialsjenkov;
 
 import java.lang.*;
 
