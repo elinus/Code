@@ -9,7 +9,7 @@
  * @Complexity:
  */
 
-package tutorialsjenkov;
+package InterviewPreparation2x19;
 
 import java.lang.*;
 

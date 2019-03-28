@@ -9,7 +9,7 @@
  * @Complexity:
  */
 
-package tutorialsjenkov;
+package InterviewPreparation2x19;
 
 public class AccessSpecifier {
     private int one;
