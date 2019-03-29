@@ -28,6 +28,7 @@ public class ConsumerRunnable implements Runnable {
         for (int i = 0; i < 20; i++) {
             long sleep = new Random().nextInt(2000);
             try {
+
                 int value = (int) queue.take(); // Blocks
                 
                 // special value is returned, true/false, Exception thrown = java.lang.NullPointerException
@@ -47,6 +48,7 @@ public class ConsumerRunnable implements Runnable {
                 System.out.println(Thread.currentThread().getName()
                         + ", queue = " + queue.toString()
                         + ", take value = " + value);
+
                 Thread.sleep(sleep);
 
             } catch (InterruptedException e) {
