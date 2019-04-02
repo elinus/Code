@@ -1,24 +1,28 @@
 #include <iostream>
 #include <string>
+#include <set>
 
 using namespace std;
 
 class Solution {
 public:
   int lengthOfLongestSubstring(string s) {
-    int alphabets[26] = {0};
+    set<char> set_; 
     int i = 0, j = 0;
-    int size_ = s.size();
-    int max_ = 0;
-    while (i < size_ && j < size_) {
-      if (!alphabets[s[j] - 'a']) {
-        alphabets[s[j++] - 'a'] = 1;
-        max_ = max_ > (j - i) ? max_ : j - i;
+    int size = s.size();
+    if (size == 0) {
+        return 0;
+    }
+    int max = 1;
+    while (i < size && j < size) {
+      if (set_.find(s[j]) == set_.end()) {
+        set_.insert(s[j++]);
+        max = max > (j - i) ? max : j - i;
       } else {
-        alphabets[s[i++] - 'a'] = 0;
+        set_.erase(s[i++]);
       }
     }
-    return max_;
+    return max;
   }
 };
 
