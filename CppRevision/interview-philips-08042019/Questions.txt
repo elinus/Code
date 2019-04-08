@@ -1,0 +1,39 @@
+1. Calculate factorial of number using compile time template.
+2. Consumer producer problem 
+    - notify_one callback?
+3. Stack implementation suing array
+    - top
+    - empty
+    - insert
+    - pop
+    - size
+4. class Employee {
+        int age;
+        char *pName;
+   };
+    Implement below methods
+    - default constructor
+    - parameterized const.
+    - destrcutor
+    - copy const.
+    - copy assignment
+    - move const.
+    - move assignment
+    - insertion and extraction operator
+5. sizeof is compile time or dynamic?
+6. diff b/w
+    - const int *ptr
+    - const int * const ptr
+7. class Same {
+        bool isDirty(){
+            return true/false;
+        }
+   }
+    vector<Same> vecSame;
+    - remove elements from vecSame;
+8. vector<int> foo(const map<int, std::string> mapx)
+    - efficient method to return vector of keys
+9. delete[] = internals
+10. singleton and factory method design, effiecent method for singleton impl.
+11. pure virtual function can have body?
+
