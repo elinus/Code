@@ -63,9 +63,10 @@ int main (int argc, char const *argv[])
     cout << "pBase(" << pBase << ") name = " << pBase->getName() << ", value = " << pBase->getValue() << endl;
     Base &rBase = derived;
     cout << "rBase(" << &rBase << ") name = " << rBase.getName() << ", value = " << rBase.getValue() << endl;
-   
+
     //error: no member named 'getValueDouble' in 'Base'
     //rBase.getValueDouble(); 
+    cout << "Ignoring virtualization = " << pBase->Base::getName() << endl;
     
     Cat cat("Fred");
     cout << "cat name = " << cat.getName() << ", sound = " << cat.speak() << endl;
