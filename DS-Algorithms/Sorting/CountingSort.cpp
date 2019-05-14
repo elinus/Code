@@ -34,8 +34,8 @@ void countingsort(vector<int> &arr) {
     }
     print(count);
     vector<int> output(size);
-    for (int i = size; i >= 1; i--) {
-        output[count[arr[i]]] = arr[i];
+    for (int i = size - 1; i >= 0; i--) {
+        output[count[arr[i]] - 1] = arr[i];
         count[arr[i]]--;
     };
     print(output);
