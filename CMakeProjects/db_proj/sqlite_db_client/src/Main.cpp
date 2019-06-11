@@ -73,6 +73,22 @@ int main (int argc, char const *argv[])
     } else {
         std::cout << "Operation done successfully!\n";
     }
+
+    /* Create merged SQL statement */
+    sql = "UPDATE COMPANY set SALARY = 25000.00 where ID=1; " \
+           "SELECT * from COMPANY";
+
+    /* Execute SQL statement */
+    res = sqlite3_exec(db, sql.c_str(), callback, (void*)data, &zErrMsg);
+
+    if (res != SQLITE_OK) {
+        std::cerr << "SQL error: " << zErrMsg << "\n";
+        sqlite3_free(zErrMsg);
+    } else {
+        std::cout << "Operation done successfully!\n";
+    }
+    
+    /* Close database */
     sqlite3_close(db);
 
     return 0;
