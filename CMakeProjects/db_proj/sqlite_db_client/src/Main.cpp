@@ -36,13 +36,35 @@ std::vector<std::vector<std::string> > query(sqlite3 *database, std::string quer
 }
 
 void print_db(const std::vector<std::vector<std::string> > &results) {
-    const int column_width = 10;
+    int max_ = 0;
+    for (size_t i = 1; i < results.size(); i++) {
+        for(size_t j = 0; j < results[i].size(); j++) {
+            if (results.size() > max_) {
+                max_ = results.size();
+            }
+        }
+    }
+    int column_width = max_ + 5;
     // Header
-    for (size_t column = 0; column < results.size(); ++column)
+    for (size_t column = 0; column < results.size() - 1; ++column)
         std::cout << std::setfill('-') << std::setw(column_width) << "" << "-+-";
     std::cout << std::setw(column_width) << "" << std::setfill(' ') << std::endl;
     // Data
-    for (size_t i = 0; i < results.size(); i++) {
+    for (size_t i = 0; i < 1; i++) {
+        for(size_t j = 0; j < results[0].size(); j++) {
+            if (j == results[i].size() - 1) {
+                std::cout << std::setw(column_width) << results[i][j] << std::endl;
+            } else {
+                std::cout << std::setw(column_width) << results[i][j] << " | ";
+            }
+        }
+    }
+    // Header
+    for (size_t column = 0; column < results.size() - 1; ++column)
+        std::cout << std::setfill('-') << std::setw(column_width) << "" << "-+-";
+    std::cout << std::setw(column_width) << "" << std::setfill(' ') << std::endl;
+    // Data
+    for (size_t i = 1; i < results.size(); i++) {
         for(size_t j = 0; j < results[i].size(); j++) {
             if (j == results[i].size() - 1) {
                 std::cout << std::setw(column_width) << results[i][j] << std::endl;
@@ -52,7 +74,7 @@ void print_db(const std::vector<std::vector<std::string> > &results) {
         }
     }
     // Footer
-    for (size_t column = 0; column < results.size(); ++column)
+    for (size_t column = 0; column < results.size() - 1; ++column)
         std::cout << std::setfill('-') << std::setw(column_width) << "" << "-+-";
     std::cout << std::setw(column_width) << "" << std::setfill(' ') << std::endl;
 }
