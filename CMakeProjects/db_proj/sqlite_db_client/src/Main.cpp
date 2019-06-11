@@ -1,10 +1,64 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <vector>
 #include <sqlite3.h>
 
+std::vector<std::vector<std::string> > query(sqlite3 *database, std::string query){
+    sqlite3_stmt *statement;
+    std::vector<std::vector<std::string> > results;
+    if(sqlite3_prepare_v2(database, query.c_str(), -1, &statement, 0) == SQLITE_OK) {
+        int cols = sqlite3_column_count(statement);
+        std::vector<std::string> col_values;
+        for(int col = 0; col < cols; col++) {
+            col_values.push_back((char*)sqlite3_column_name(statement, col));
+        }
+        results.push_back(col_values);
+        int result = 0;
+        while(true) {
+            result = sqlite3_step(statement);
+            if(result == SQLITE_ROW) {
+                std::vector<std::string> values;
+                for(int col = 0; col < cols; col++) {
+                    values.push_back((char*)sqlite3_column_text(statement, col));
+                }
+                results.push_back(values);
+            } else {
+                break;  
+            }
+        }
+        sqlite3_finalize(statement);
+    }
+
+    std::string error = sqlite3_errmsg(database);
+    if(error != "not an error") std::cout << query << " " << error << std::endl;
+    return results; 
+}
+
+void print_db(const std::vector<std::vector<std::string> > &results) {
+    const int column_width = 10;
+    // Header
+    for (size_t column = 0; column < results.size(); ++column)
+        std::cout << std::setfill('-') << std::setw(column_width) << "" << "-+-";
+    std::cout << std::setw(column_width) << "" << std::setfill(' ') << std::endl;
+    // Data
+    for (size_t i = 0; i < results.size(); i++) {
+        for(size_t j = 0; j < results[i].size(); j++) {
+            if (j == results[i].size() - 1) {
+                std::cout << std::setw(column_width) << results[i][j] << std::endl;
+            } else {
+                std::cout << std::setw(column_width) << results[i][j] << " | ";
+            }
+        }
+    }
+    // Footer
+    for (size_t column = 0; column < results.size(); ++column)
+        std::cout << std::setfill('-') << std::setw(column_width) << "" << "-+-";
+    std::cout << std::setw(column_width) << "" << std::setfill(' ') << std::endl;
+}
+
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
-    int i;
-    for(i = 0; i<argc; i++) {
+    for(int i = 0; i < argc; i++) {
         std::cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << "\n";
     }
     std::cout << "\n";
@@ -51,7 +105,7 @@ int main (int argc, char const *argv[])
            "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)" \
            "VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );" \
            "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)" \
-           "VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );";
+           "VALUES (4, 'Mark', 25, 'Rich-Mond', 65000.00 );";
 
     /* Execute SQL statement */
     res = sqlite3_exec(db, sql.c_str(), callback, 0, &zErrMsg);
@@ -87,7 +141,12 @@ int main (int argc, char const *argv[])
     } else {
         std::cout << "Operation done successfully!\n";
     }
-    
+
+    std::cout << "\n\n";
+    // TODO: make class for this.
+    auto results = query(db, "SELECT * from COMPANY;");
+    print_db(results);
+
     /* Close database */
     sqlite3_close(db);
 
