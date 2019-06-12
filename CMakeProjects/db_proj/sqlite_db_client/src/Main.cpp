@@ -168,6 +168,21 @@ int main (int argc, char const *argv[])
     // TODO: make class for this.
     auto results = query(db, "SELECT * from COMPANY;");
     print_db(results);
+    
+    /* Create SQL statement */
+    sql = "DELETE from COMPANY where ID=2";
+    /* Execute SQL statement */
+    res = sqlite3_exec(db, sql.c_str(), callback, (void*)data, &zErrMsg);
+    if(res != SQLITE_OK) {
+        std::cout << "SQL error: " << zErrMsg << "\n";
+        sqlite3_free(zErrMsg);
+    } else {
+        std::cout << "Operation done successfully!\n";
+    }
+    std::cout << "\n\n";
+    
+    results = query(db, "SELECT * from COMPANY;");
+    print_db(results);
 
     /* Close database */
     sqlite3_close(db);
