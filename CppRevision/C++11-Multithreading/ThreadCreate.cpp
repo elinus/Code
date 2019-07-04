@@ -18,7 +18,7 @@ class FooBar {
     public:
         void operator ()() {
             for (int i = 0; i < 5; i++) {
-                std::cout << __func__ << ": " << i << std::endl;
+                std::cout << __func__ << "[" <<std::this_thread::get_id() << "]:=> " << i << std::endl;
             }
         }
 };
