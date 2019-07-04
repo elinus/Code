@@ -28,7 +28,6 @@ int main(int argc, char const *argv[])
     /* Thread creation using function pointer */
     std::thread t1(foo);
     bar();
-    t1.join();
 
     /* Thread creation using lambda function */
     std::thread t2([]{
@@ -37,6 +36,12 @@ int main(int argc, char const *argv[])
             }
             });
     bar();
+
+    if (t1.get_id() != t2.get_id()) {
+        std::cout << "T1 Id: " << t1.get_id() << std::endl;
+        std::cout << "T2 Id: " << t2.get_id() << std::endl;
+    }
+    t1.join();
     t2.join();
 
     /* Thread creation using function object */
