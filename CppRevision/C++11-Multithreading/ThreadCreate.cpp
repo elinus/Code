@@ -8,10 +8,20 @@ void foo() {
 }
 
 void bar() {
+    static int counter = 0;
     for (int i = 0; i < 5; ++i) {
-        std::cout << __func__ << ": " << i << std::endl;
+        std::cout << __func__ << ": " << ++counter << std::endl;
     }
 }
+
+class FooBar {
+    public:
+        void operator ()() {
+            for (int i = 0; i < 5; i++) {
+                std::cout << __func__ << ": " << i << std::endl;
+            }
+        }
+};
 
 int main(int argc, char const *argv[])
 {
@@ -28,6 +38,11 @@ int main(int argc, char const *argv[])
             });
     bar();
     t2.join();
+
+    /* Thread creation using function object */
+    std::thread t3((FooBar()));
+    bar();
+    t3.join();
 
     std::cout << "Exiting main thread!" << std::endl;
     return 0;
