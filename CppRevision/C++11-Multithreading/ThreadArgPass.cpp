@@ -2,6 +2,13 @@
 #include <thread>
 #include <string>
 
+class FooBar {
+    public:
+        void fizz(int x) {
+            std::cout << "fizz x = " << x << std::endl;
+        }
+};
+
 void foo(int x, std::string str) {
     std::cout << "tid = " << std::this_thread::get_id() 
         << ", int = " << x 
@@ -31,6 +38,13 @@ int main(int argc, char const *argv[])
     std::cout << "in main(after), x = " << x << std::endl;
     
     std::cout << "CHECKPOINT #2 :: " << std::this_thread::get_id() << std::endl;
+
+    FooBar fbObj;
+    x = 20;
+    std::thread t3(&FooBar::fizz, &fbObj, x);
+    if (t3.joinable()) {
+        t3.join();
+    }
 
     std::cout << "exiting tid = " << std::this_thread::get_id() << std::endl;
     return 0;
