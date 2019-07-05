@@ -20,6 +20,19 @@ int main(int argc, char const *argv[])
     }
 
     for_each(threadVec.begin(), threadVec.end(), std::mem_fn(&std::thread::join));
+    std::cout << "CHECKPOINT#1, tid = " << std::this_thread::get_id() << std::endl;
+    
+    std::thread t1{WorkerThread()};
+    if (t1.joinable()) {
+        t1.join();
+    }
+    
+    std::cout << "CHECKPOINT#2, tid = " << std::this_thread::get_id() << std::endl;
+    std::thread t2{WorkerThread()};
+    if (t2.joinable()) {
+        t2.detach();
+    }
+    
     std::cout << "Exiting main thread! id = " << std::this_thread::get_id() << std::endl;
     return 0;
 }
