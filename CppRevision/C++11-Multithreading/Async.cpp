@@ -2,6 +2,7 @@
 #include <thread>
 #include <chrono>
 #include <string>
+#include <future>
 
 std::string fetchDataFromDB(std::string data) {
     std::this_thread::sleep_for(std::chrono::seconds(5));
@@ -16,8 +17,10 @@ std::string fetchDataFromFile(std::string data) {
 int main(int argc, char const *argv[])
 {
     std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
-    std::string db_data = fetchDataFromDB("Data");
+    //std::string db_data = fetchDataFromDB("Data");
+    std::future<std::string> future_db_data = std::async(std::launch::async, fetchDataFromDB, "Data");
     std::string file_data = fetchDataFromFile("Data");
+    std::string db_data = future_db_data.get();
     auto end = std::chrono::system_clock::now();
     std::chrono::seconds diff = std::chrono::duration_cast<std::chrono::seconds>(end - start);
     std::cout << "Total time diff = " << diff.count() << " Seconds."<< std::endl;
