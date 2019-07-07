@@ -11,11 +11,12 @@ class Wallet {
         Wallet() : mMoney(0) {}
         int getMoney() { return mMoney; }
         void addMoney(int money) {
-            mMutex.lock();
+            std::lock_guard<std::mutex> lg(mMutex);
+            //mMutex.lock();
             for (int i = 0; i < money; ++i) {
                 mMoney++;
             }
-            mMutex.unlock();
+            //mMutex.unlock();
         }
 };
 
