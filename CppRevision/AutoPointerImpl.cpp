@@ -5,7 +5,7 @@ class AutoPtr {
     private:
         T *m_ptr;
     public:
-        AutoPtr(T *ptr): m_ptr(ptr) {}
+        AutoPtr(T *ptr = nullptr): m_ptr(ptr) {}
         ~AutoPtr() {
             delete m_ptr;
         }
@@ -15,11 +15,23 @@ class AutoPtr {
         T* operator ->() const {
             return m_ptr;
         }
-        AutoPtr(AutoPtr & other) {
-            m_ptr = other.m_ptr;
+        
+        AutoPtr(const AutoPtr & other) {
+            m_ptr = new T;
+            *m_ptr = *other.m_ptr;
+        }
+        AutoPtr& operator =(const AutoPtr & other) {
+            if (this != &other) {
+                delete m_ptr;
+                m_ptr = new T;
+                *m_ptr = *other.m_ptr;
+            }
+            return *this;
+        }        
+        AutoPtr(AutoPtr && other): m_ptr(other.m_ptr) {
             other.m_ptr = nullptr;
         }
-        AutoPtr& operator =(AutoPtr & other) {
+        AutoPtr& operator =(AutoPtr && other) {
             if (this != &other) {
                 delete m_ptr;
                 m_ptr = other.m_ptr;
@@ -46,10 +58,17 @@ void foo(AutoPtr<Test> testObj) {
     std::cout << "foo()" << std::endl;
 }
 
+AutoPtr<Test> bar() {
+    AutoPtr<Test> testObj(new Test);
+    return testObj;
+}
+
 int main(int argc, char const *argv[]) {
-    AutoPtr<Test> testObj1(new Test());
+    //AutoPtr<Test> testObj1(new Test());
     //AutoPtr<Test> testObj2(testObj1);
-    foo(testObj1);
+    //foo(testObj1);
+    AutoPtr<Test> test;
+    test = bar();
     return 0;
 }
 
