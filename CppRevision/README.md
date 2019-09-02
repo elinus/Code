@@ -12,7 +12,16 @@
 
 - const_cast
     -  Used to change the const or volatile qualifiers of pointers or
-    references
+    references.
     - When the actual referred object/variable is not const.
     - When need to call some 3rd party library where it is taking variable/object
     as non-const but not changing that.
+
+- dynamic_cast
+    - Work only on polymorphic base class(at least one virtual function in base
+            class)
+    - Used mainly at run time to find out correct down-cast.
+    - used for casting (up-cast)D->B & (down-cast)B->D
+    - has run time overhead
+    - if sure that there will never cast to wrong object then we should avoid
+    this cast and use static_cast
