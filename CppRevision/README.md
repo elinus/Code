@@ -1,11 +1,18 @@
 ## Type casting
 - static_cast
-    - 0. Compile time casting.
-    - 1. It performs implicit conversions between types.
-    - NOTE: C-Style cast is hard to find in code
-    - 2. Use static_cast when conversion between types is provided through
+    - Compile time casting.
+    - It performs implicit conversions between types.
+    - [NOTE] C-Style cast is hard to find in code
+    - Use static_cast when conversion between types is provided through
        conversion operator or conversion constructor.
-    - 3. static_cast is more restrictive than C-Style
-    - 4. static_cast avoid cast from derived to private base pointer.
-    - 5. Use for all upcast, but never used for confused downcast.
-    - 6. static_cast should be prefered when converting to void* or from void*.
+    - static_cast is more restrictive than C-Style
+    - static_cast avoid cast from derived to private base pointer.
+    - Use for all upcast, but never used for confused downcast.
+    - static_cast should be prefered when converting to void* or from void*.
+
+- const_cast
+    -  Used to change the const or volatile qualifiers of pointers or
+    references
+    - When the actual referred object/variable is not const.
+    - When need to call some 3rd party library where it is taking variable/object
+    as non-const but not changing that.
