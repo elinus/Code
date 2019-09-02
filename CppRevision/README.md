@@ -25,3 +25,8 @@
     - has run time overhead
     - if sure that there will never cast to wrong object then we should avoid
     this cast and use static_cast
+
+- reinterpret_cast
+    - perform dangerous conversions bcoz it can typecast any pointer to any other pointer.
+    - used in case we want ot work with bits
+    - Not portable
