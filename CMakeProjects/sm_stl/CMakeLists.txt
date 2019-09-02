@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10.2)
 
 set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
@@ -7,6 +7,13 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")
+
+# UNIX, WIN32, WINRT, CYGWIN, APPLE are environment variables as flags set by default system
+if(UNIX)
+    message("This is a ${CMAKE_SYSTEM_NAME} system")
+elseif(WIN32)
+    message("This is a Windows System")
+endif()
 
 project(sm_stl)
 
