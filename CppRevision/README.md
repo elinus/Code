@@ -1,5 +1,6 @@
 ## Type casting
-- static_cast
+* static_cast
+    ```sh
     - Compile time casting.
     - It performs implicit conversions between types.
     - [NOTE] C-Style cast is hard to find in code
@@ -9,15 +10,19 @@
     - static_cast avoid cast from derived to private base pointer.
     - Use for all upcast, but never used for confused downcast.
     - static_cast should be prefered when converting to void* or from void*.
+    ```
 
-- const_cast
+* const_cast
+    ```sh
     -  Used to change the const or volatile qualifiers of pointers or
     references.
     - When the actual referred object/variable is not const.
     - When need to call some 3rd party library where it is taking variable/object
     as non-const but not changing that.
+    ```
 
-- dynamic_cast
+* dynamic_cast
+    ```sh
     - Work only on polymorphic base class(at least one virtual function in base
             class)
     - Used mainly at run time to find out correct down-cast.
@@ -25,8 +30,11 @@
     - has run time overhead
     - if sure that there will never cast to wrong object then we should avoid
     this cast and use static_cast
+    ```
 
-- reinterpret_cast
+* reinterpret_cast
+    ```sh
     - perform dangerous conversions bcoz it can typecast any pointer to any other pointer.
     - used in case we want ot work with bits
     - Not portable
+    ```
