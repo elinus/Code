@@ -4,7 +4,7 @@ public class TrieClient {
 
     public static void main(String[] args) {
         String keys[] = {"the", "a", "there", "answer", "any",
-                "by", "bye", "their" };
+                "by", "bye", "their", "qwerty"};
 
         Trie trie = new Trie();
         TrieNode root = new TrieNode();
@@ -19,5 +19,10 @@ public class TrieClient {
         char str[] = new char[20];
         System.out.println("\nContent of Trie:");
         trie.display(root, str, level);
+
+        root = trie.remove(root, "qwerty", 0);
+        System.out.println("\nContent of Trie(After removing element):");
+        trie.display(root, str, level);
+
     }
 }

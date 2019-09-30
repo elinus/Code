@@ -42,4 +42,24 @@ public class Trie {
             }
         }
     }
+
+    public boolean isEmpty(TrieNode root) {
+        for (int i = 0; i < TrieNode.ALPHABET_SIZE; i++) {
+            if (root.children[i] != null) return false;
+        }
+        return true;
+    }
+
+    public TrieNode remove(TrieNode root, String key, int depth) {
+        if (root == null) return null;
+        if (depth == key.length()) {
+            if (root.isEndOfWord) root.isEndOfWord = false;
+            if (isEmpty(root)) root = null;
+            return root;
+        }
+        int index = (int)(key.charAt(depth) - 'a');
+        root.children[index] = remove(root.children[index], key, depth + 1);
+        if (isEmpty(root) && root.isEndOfWord == false) root = null;
+        return root;
+    }
 }
