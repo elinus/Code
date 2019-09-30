@@ -62,4 +62,15 @@ public class Trie {
         if (isEmpty(root) && root.isEndOfWord == false) root = null;
         return root;
     }
+
+    public int wordCount(TrieNode root) {
+        int result = 0;
+        if (root.isEndOfWord) result++;
+        for (int i = 0; i < TrieNode.ALPHABET_SIZE; i++) {
+            if (root.children[i] != null) {
+                result += wordCount(root.children[i]);
+            }
+        }
+        return result;
+    }
 }

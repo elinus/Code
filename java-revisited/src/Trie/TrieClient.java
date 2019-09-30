@@ -24,5 +24,7 @@ public class TrieClient {
         System.out.println("\nContent of Trie(After removing element):");
         trie.display(root, str, level);
 
+        System.out.println("Word count = " + trie.wordCount(root));
+
     }
 }
