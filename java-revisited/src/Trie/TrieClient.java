@@ -14,5 +14,10 @@ public class TrieClient {
 
         System.out.println("the = " + trie.search(root, "the"));
         System.out.println("these = " + trie.search(root, "these"));
+
+        int level = 0;
+        char str[] = new char[20];
+        System.out.println("\nContent of Trie:");
+        trie.display(root, str, level);
     }
 }

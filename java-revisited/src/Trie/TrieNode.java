@@ -2,7 +2,7 @@ package Trie;
 
 public class TrieNode {
 
-    static final int ALPHABET_SIZE = 26;
+    public static final int ALPHABET_SIZE = 26;
     TrieNode children[];
     boolean isEndOfWord;
 

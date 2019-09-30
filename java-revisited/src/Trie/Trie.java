@@ -25,4 +25,21 @@ public class Trie {
         }
         return pCrawl != null && pCrawl.isEndOfWord;
     }
+
+    public boolean isEndOfWord(TrieNode root) {
+        return root.isEndOfWord;
+    }
+
+    void display(TrieNode root, char str[], int level) {
+        if (isEndOfWord(root)) {
+            str[level] = '\0';
+            System.out.println(String.copyValueOf(str, 0, level));
+        }
+        for (int i = 0; i < TrieNode.ALPHABET_SIZE; i++) {
+            if (root.children[i] != null) {
+                 str[level] = (char)(i + 'a');
+                 display(root.children[i], str, level + 1);
+            }
+        }
+    }
 }
