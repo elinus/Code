@@ -45,22 +45,22 @@ bool search_prefix(TrieNode* root, const std::string& key) {
     return true;
 }
 
-TrieNode* remove(TrieNode* root, const std::string& key, int depth) {
-    if (root == nullptr) return root;
+bool remove(TrieNode* root, const std::string& key, int depth) {
     if (depth == key.size()) {
-        if (root->m_endOfWord) {
-            root->m_endOfWord = false;
+        if (!root->m_endOfWord) {
+            return false;
         }
-        if (root->m_childrens.empty()) {
-            root = nullptr;
-            return root;
-        }
+        root->m_endOfWord = false;
+        return root->m_childrens.empty();
     }
-    root->m_childrens[key[depth]] = remove(root->m_childrens[key[depth]], key, depth + 1);
-    if (root->m_childrens.empty() && !root->m_endOfWord) {
-        root = nullptr;
+    TrieNode *node = root->m_childrens[key[depth]];
+    if (node == nullptr) return false;
+    bool del_curr_node = remove(root->m_childrens[key[depth]], key, depth + 1);
+    if (del_curr_node) {
+        root->m_childrens.erase(key[depth]);
+        return root->m_childrens.empty();
     }
-    return root;
+    return false;
 }
 
 void display(TrieNode* root, char str[], int level) {
