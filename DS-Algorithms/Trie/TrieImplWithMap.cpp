@@ -45,7 +45,26 @@ bool search_prefix(TrieNode* root, const std::string& key) {
     return true;
 }
 
+TrieNode* remove(TrieNode* root, const std::string& key, int depth) {
+    if (root == nullptr) return root;
+    if (depth == key.size()) {
+        if (root->m_endOfWord) {
+            root->m_endOfWord = false;
+        }
+        if (root->m_childrens.empty()) {
+            root = nullptr;
+            return root;
+        }
+    }
+    root->m_childrens[key[depth]] = remove(root->m_childrens[key[depth]], key, depth + 1);
+    if (root->m_childrens.empty() && !root->m_endOfWord) {
+        root = nullptr;
+    }
+    return root;
+}
+
 void display(TrieNode* root, char str[], int level) {
+    if (root == nullptr) return;
     if (root->m_endOfWord) {
         str[level] = '\0';
         std::cout << str << "\n";
@@ -66,7 +85,8 @@ int count(TrieNode* root) {
 }
 
 int main(int argc, char const *argv[]) {
-    std::string keys[] = {"the", "a", "there", "answer", "any", "by", "bye", "their"};
+    std::string keys[] = {"the", "a", "there", "answer", "any", "by", "bye", "their", 
+        "qwerty", "qweaz", "qweyrt"};
     TrieNode *trie = new TrieNode();
     for (int i = 0; i < sizeof(keys)/sizeof(keys[0]); ++i) {
         insert(trie, keys[i]);
@@ -81,6 +101,15 @@ int main(int argc, char const *argv[]) {
     std::cout << "Trie word count = " << count(trie) << "\n";
     std::cout << "prefix(the) = " << search_prefix(trie, "the") << "\n";
     std::cout << "prefix(thx) = " << search_prefix(trie, "thx") << "\n";
+
+    remove(trie, "qwerty", 0);
+    std::cout << "----- TRIE (remove = \"qwerty\") -----\n";
+    display(trie, trie_strs, 0);
+
+    remove(trie, "qwe", 0);
+    std::cout << "----- TRIE (remove = \"qwe\") -----\n";
+    display(trie, trie_strs, 0);
+
     return 0;
 }
 
