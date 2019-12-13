@@ -1,0 +1,176 @@
+@@@@@@@@@@@@@@@@@@@ DONE [Start = 15-09-2019]@@@@@@@@@@@@@@@@@@@@@
+http://javarevisited.blogspot.in/2012/07/why-enum-singleton-are-better-in-java.html
+
+@@@@@@@@@@@@@@@@@@@ DONE [end = * ]@@@@@@@@@@@@@@@@@@@@@
+
+@@@@@@@@@@@@@@@@@@@ JAVA INTERVIEW QUESTIONS BY JATIN RAITANI @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+http://javarevisited.blogspot.in/2012/07/why-enum-singleton-are-better-in-java.html
+http://javarevisited.blogspot.in/2011/08/enum-in-java-example-tutorial.html
+http://javarevisited.blogspot.in/2012/03/why-character-array-is-better-than.html
+
+http://javarevisited.blogspot.in/2011/06/volatile-keyword-java-example-tutorial.html
+http://javarevisited.blogspot.in/2012/03/mixing-static-and-non-static.html
+http://javarevisited.blogspot.in/2011/12/how-to-traverse-or-loop-hashmap-in-java.html
+http://javarevisited.blogspot.in/2011/07/string-vs-stringbuffer-vs-stringbuilder.html
+
+http://javarevisited.blogspot.in/2011/02/how-to-write-equals-method-in-java.html
+http://javarevisited.blogspot.in/2012/01/difference-thread-vs-runnable-interface.html
+http://javarevisited.blogspot.in/2011/04/difference-between-concurrenthashmap.html
+http://javarevisited.blogspot.in/2011/09/difference-hashmap-vs-hashset-java.html
+http://javarevisited.blogspot.in/2011/07/classnotfoundexception-vs.html
+http://javarevisited.blogspot.in/2012/02/why-wait-notify-and-notifyall-is.html
+http://javarevisited.blogspot.in/2011/07/why-multiple-inheritances-are-not.html
+
+http://javarevisited.blogspot.in/2012/01/difference-thread-vs-runnable-interface.html
+http://javarevisited.blogspot.in/2011/07/java-multi-threading-interview.html
+http://javarevisited.blogspot.in/2011/02/how-to-implement-thread-in-java.html
+http://javarevisited.blogspot.in/2011/10/how-to-stop-thread-java-example.html
+http://javarevisited.blogspot.in/2010/10/what-is-difference-between-synchronized.html
+http://javarevisited.blogspot.in/2010/10/why-string-is-immutable-in-java.html
+
+http://www.programcreek.com/2013/04/why-string-is-immutable-in-java/
+http://javarevisited.blogspot.in/2010/10/how-to-check-if-thread-has-lock-on.html
+http://javarevisited.blogspot.in/2011/03/10-interview-questions-on-singleton.html
+http://javarevisited.blogspot.in/2011/10/how-substring-in-java-works.html
+
+http://javarevisited.blogspot.in/2011/04/difference-between-concurrenthashmap.html
+http://javarevisited.blogspot.in/2011/09/generics-java-example-tutorial.html
+http://javarevisited.blogspot.in/2011/11/collection-interview-questions-answers.html
+http://javarevisited.blogspot.in/2011/10/java-iterator-tutorial-example-list.html
+http://javarevisited.blogspot.in/2010/10/what-is-difference-between-enumeration.html
+http://javarevisited.blogspot.in/2011/04/top-10-java-serialization-interview.html
+
+http://javarevisited.blogspot.in/2012/06/builder-design-pattern-in-java-example.html
+http://javarevisited.blogspot.in/2012/02/producer-consumer-design-pattern-with.html
+http://javarevisited.blogspot.in/2012/07/countdownlatch-example-in-java.html
+http://javarevisited.blogspot.in/2011/06/comparator-and-comparable-in-java.html
+http://javarevisited.blogspot.in/2011/12/jre-jvm-jdk-jit-in-java-programming.html
+
+http://javarevisited.blogspot.in/2011/04/garbage-collection-in-java.html
+http://javarevisited.blogspot.in/2011/12/main-public-static-java-void-method-why.html
+http://javarevisited.blogspot.in/2012/02/fail-safe-vs-fail-fast-iterator-in-java.html
+http://javarevisited.blogspot.in/2012/12/how-classloader-works-in-java.html
+http://javarevisited.blogspot.in/2012/07/when-class-loading-initialization-java-example.html
+http://javarevisited.blogspot.in/2012/07/cyclicbarrier-example-java-5-concurrency-tutorial.html
+
+enumset and enummap
+annoations
+cache implementation
+lru cache implementation in java
+http://puzzles.nigelcoldwell.co.uk/
+8421745058
+8421745058
+
+http://a4academics.com/interview-questions/53-database-and-sql/397-top-100-database-sql-interview-questions-and-answers-examples-queries
+http://www.journaldev.com/1079/java-thread-tutorial
+
+1. The Calendar Problem: A man has two cubes at his desk. Every day he arranges both cubes so that the front faces show the current day of the month. What numbers are on the faces of the cubes to allow this?
+http://www.techinterview.org/post/508822718/calendar-cubes/
+2. A 100 doors: You have 100 doors in a row that are all initially closed. You make 100 passes by the doors starting with the first door every time. First time through you visit every door and toggle the door (if the door is closed, you open it, if it’s open, you close it). The second time you only visit every 2nd door (door #2, #4, #6). The third time, every 3rd door (door #3, #6, #9), etc, until you only visit the 100th door. What state are the doors in after the last pass or in general after n pass?
+http://www.techinterview.org/post/526370758/100-doors-in-a-row/
+3. 100 Jars: There are 100 jars containing infinite number of marbles each of 10 grams except one jar which contains all marbles of 9 grams. How would you find out which jar it is in exactly one weighing? For the same problem what would be your approach if more than one jars had 9 gram marbles?
+https://www.google.co.in/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=100+jars+problem
+4. Racing horses: There are 25 horses in a racing competition. You can have race among 5 horses in a particular race. What would be the minimum number of races that will be required to determine the 1st, 2nd and 3rd fastest horses?
+http://www.programmerinterview.com/index.php/puzzles/25-horses-3-fastest-5-races-puzzle/
+5. Two persons: one always speaks truth other always speaks false. You don't know who is what, You are new to the city, you are allowed to ask exactly one question to find out the direction (for e.g. south or north), what question would you ask?
+
+6. Three persons: one always speaks the truth, second always lies and third randomly speaks the truth or lies. You are allowed to ask each entity one or more yes-no questions. You are allowed to ask three such questions. You must deduce the identities of the three entities with the answers you get. How should you ask the three questions? 
+http://www.quora.com/What-is-the-solution-to-this-3-persons-puzzle
+
+7. Cake cutting: There is a rectangular shaped cake of arbitrary size; we cut a rectangular piece (any size or orientation) from the original cake. Question is how would you cut the remaining cake into two equal halves in a straight cut of a knife. And obviously you can’t cut the cake by its cross section.
+http://www.programmerinterview.com/index.php/puzzles/birthday-cake-8-pieces/
+
+8. The light bulb problem: You have three light bulbs in a sealed room. You know that initially, all three light bulbs are off. Outside the room there are three switches with a one-to-one correspondence to the light bulbs. You may flip the switches however you like and you may enter the room once. How should you flip the switches to determine which switch controls which light bulb? 
+http://www.coolmath4kids.com/math_puzzles/l1-threelights.html
+
+9. You have a cylindrical glass with 100% full of water. You have to make it 50% (half). Condition: You are not supposed to use any scale or any type of measuring instrument.
+http://www.quora.com/You-have-a-cylindrical-glass-100-full-of-water-How-can-you-make-it-50-half-full-without-using-a-scale-or-any-type-of-measuring-instrument
+
+10. A problem of probability: You are a prisoner sentenced to death. The Emperor offers you a chance to live by playing a simple game. He gives you 50 black marbles, 50 white marbles and 2 empty bowls. He then says, "Divide these 100 marbles into these 2 bowls. You can divide them any way you like as long as you use all the marbles. Then I will blindfold you and shuffle the bowls. You then may choose one bowl randomly and remove ONE marble from it. If the marble is WHITE you will live, but if the marble is BLACK... you will die." How do you divide the marbles up so that you have the greatest probability of choosing a WHITE marble?
+11. Pirates on deck: Five pirates discover a chest full of 100 gold coins. The pirates are ranked by their years of service, Pirate 5 having five years of service, Pirate 4 four years, and so on down to Pirate 1 with only one year of deck scrubbing under his belt. To divide up the loot, they agree on the following: 
+
+The most senior pirate will propose a distribution of the booty. All pirates will then vote, including the most senior pirate, and if at least 50% of the pirates on board accept the proposal, the gold is divided as proposed. If not, the most senior pirate is forced to walk the plank. Then the process starts over with the next most senior pirate until a plan is approved.          The pirate’s preference is first to remain alive, and next to get as much gold as possible. The most senior pirate thinks for a moment and then proposes a plan that maximizes his gold, and which he knows the others will accept. How does he divide up the coins? 
+What plan would the most senior pirate propose on a boat full of 15 pirates?
+http://www.mathsisfun.com/puzzles/5-pirates-solution.html
+
+12. What is next number in the series:                                                                                                         a> 1, 11, 21, 1211, 111221, 312211...
+http://www.funtrivia.com/askft/Question20455.html    
+                                                                                                          b> 1, 20, 33, 400, 505, 660, 777,8000, 9009...
+
+13. Sneaking Spider:  A rectangular room measures 7.5 meters in length and 3 meters in width. The room has a height of 3 meters. A spider sits 25 centimeters down from the ceiling at the middle of one of the short walls. A sleeping fly sits 25 centimeters up from the floor at the middle of the opposite wall. The spider wants to walk (i.e., move along the walls, floor, and ceiling only) to the fly to catch it. How can the spider reach the fly, walking just 10 meters? Is it even possible?
+http://www.quora.com/What-is-the-solution-to-this-Sneaking-Spider-puzzle
+
+14. The Fuse Problem: I have a box of one hour fuses. If I set one end of a fuse on fire, I know that the fuse will burn all the way to the other end in EXACTLY one hour. However, the fuses may burn unevenly [ie - it may take 59 minutes to burn the first half of a fuse, but only 1 minute to burn the other half]. Furthermore, all of the fuses may burn unevenly at a different rate. The only thing we know for sure is that each one takes 1 HOUR to burn completely. The Question: Given 2 of these fuses and a lighter, how can I time out 45 minutes precisely? 
+http://www.programmerinterview.com/index.php/puzzles/2-fuses-problem-measure-45-minutes/
+
+15. Dropping eggs: There is a building of 100 floors If an egg drops from the Nth floor or above it will break If it’s dropped from any floor below, it will not break You’re given 2 eggs Find N, while minimizing the number of drops for the worst case.
+http://www.programmerinterview.com/index.php/puzzles/2-eggs-100-floors-puzzle/
+
+16. MIT Mathematicians:  Two MIT math grads bump into each other while shopping. They haven't seen each other in over 20 years.                                                                                                                First grad to the second: "How have you been?"
+Second: "Great! I got married and I have three daughters now."
+First: "Really? How old are they?"
+Second: "Well, the product of their ages is 72, and the sum of their ages is the same as the number on that building over there..."
+First: "Right, ok... Oh wait... Hmm, I still don't know."
+Second: "Oh sorry, the oldest one just started to play the piano."
+First: "Wonderful! My oldest is the same age!"
+How old was the first grad’s daughter?
+17. Crazy guy on the plane: A line of 100 airline passengers is waiting to board a plane. They each hold a ticket to one of the 100 seats on that flight. (For convenience, let's say that the nth passenger in line has a ticket for the seat number n.) Unfortunately, the first person in line is crazy, and will ignore the seat number on their ticket, picking a random seat to occupy. All of the other passengers are quite normal, and will go to their proper seat unless it is already occupied. If it is occupied, they will then find a free seat to sit in, at random. What is the probability that the last (100th) person to board the plane will sit in their proper seat (#100)?
+18. Escape from Alcatraz: A prisoner stays at the maximum security prison on Alcatraz Island. The prison is in shape of 4X4 cells, the prisoner stays at top right cell with all other cell having a guard, only escape from prison is from bottom left cell (see diagram for further clarification). Here are the rules for a successful escape from the prison.
+·        The prisoner has to escape from the prison overnight by killing all the guards.
+·        He can only move vertically or horizontally, no diagonal movement is allowed.
+·        As soon as the prisoner enters a cell he has to kill the guard.                   
+·        If he sees the dead guard again he will go mad for 24 hrs out of guilt, i.e he can't go to same cell twice. 
+Provide an escape route.
+19. Transporting bananas: You are standing at point A with 3000 bananas and a faithful camel. Your destination is point B which is exactly 1000 kms away. The objective is to transport as many bananas as possible to point B, under the following conditions.
+1. Only the camel can carry bananas.
+2. The maximum load that the camel can carry at a time is 1000 bananas.
+3. The camel consumes 1 banana for every km that it travels. (Irrespective of direction of travel or load)
+ 
+20. There are 10 marbles of equal weight except for one which weighs a little more. Given a balance how many weighing are required to deduce the heavier marble. What would be the answer for N marbles? Your answer should consider the worst case.
+http://www.quora.com/There-are-9-marbles-of-equal-weight-and-one-that-weighs-a-little-more-Given-a-balance-how-many-weighings-are-required-to-deduce-which-is-the-heavier-marble
+ 
+21. Imagine a disk spinning like a record player turn table. Half of the disk is black and the other is white. Assume you have an unlimited number of color sensors. How many sensors would you have to place around the disk to determine the direction the disk is spinning? Where would they be placed?
+22. There are 3 baskets. One of them has apples, one has oranges only and the other has mixture of apples and oranges. The labels on their baskets always lie. (i.e. if the label says oranges, you are sure that it doesn't have oranges only, it could be a mixture) The task is to pick one basket and pick only one fruit from it and then correctly label all the three baskets. How do you do it?
+ 
+23. Prime pairs: Pairs of primes separated by a single number are called prime pairs. Examples are 17 and 19, 5 and 7 etc. Prove that the number between a prime pair is always divisible by 6 (assuming both numbers in the pair are greater than 6). Now prove that there are no 'prime triples'.
+http://gpl4you.com/ask_questions-480-Prove-that-the-number-between-a-prime-pair-is-always-divisible-by-6-assuming-both-numbers-in-the-pair
+
+24. Suicidal Monks: There is a group of monks in a monastery. These monks have all taken a vow of silence. They cannot communicate with each other, and all they do is pray in a common room during the day and sleep at night. As well, they have no mirrors in the compound. One day, the head monk calls them all together and says "Tonight while you sleep, I will place a black X on some of your foreheads. When you awaken, continue your normal activities. But once you determine that you have an X, you must wait until night, and then kill yourself". So from then on, they pray together by day, and each night some may commit suicide. The question: if there are N monks with Xes, how many days does it take for the N monks to commit suicide?
+http://www.quora.com/What-is-the-solution-for-the-Suicidal-Monks-Puzzle
+ 
+25. The Monty Hall problem:  You are given a choice between three doors -- 1, 2, and 3. One of them contains a trip to Hawaii, and the other 2 are empty. You pick one. Then he opens one that you didn't pick, and it's empty. He gives you the chance to switch your choice to the other door you did not choose. Should you change your original selection?
+http://betterexplained.com/articles/understanding-the-monty-hall-problem/
+
+http://thought-works.blogspot.in/2012/11/object-oriented-design-for-elevator-in.html
+http://howtodoinjava.com/2013/07/09/useful-java-collection-interview-questions/
+http://www.geeksforgeeks.org/find-smallest-value-represented-sum-subset-given-array/
+http://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
+http://javarevisited.blogspot.in/2011/04/top-10-java-serialization-interview.html
+http://www.sanfoundry.com/java-program-implement-hash-tables-chaining-list-heads/
+
+http://android-er.blogspot.in/2014/08/implement-simple-android-chat.html
+http://best-interview.com/design-least-recently-used-lru-cache-java/
+http://www.journaldev.com/1069/java-thread-pool-example-using-executors-and-threadpoolexecutor
+http://www.journaldev.com/1090/java-callable-future-example
+http://www.androiddesignpatterns.com/2013/04/retaining-objects-across-config-changes.html
+http://developer.android.com/training/basics/fragments/communicating.html
+http://stackoverflow.com/questions/6099364/how-to-use-pendingintent-to-communicate-from-a-service-to-a-client-activity
+http://codereview.stackexchange.com/questions/71790/design-a-chess-game-using-object-oriented-principles
+
+chess game
+parking lot
+tic tac toe
+elevator-in
+book my show
+library catalogue
+pizza factory
+atm machine
+
+Revision.txt
+Open with Google Docs
+Displaying Revision.txt.
+
+@@@@@@@ SUNIL MOURYA @@@@@@@
+https://www.quora.com/How-should-one-start-preparing-for-an-interview-in-Java-with-3-years-of-experience
+https://www.quora.com/How-do-I-prepare-for-Java-interview-for-5-years-experienced
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
