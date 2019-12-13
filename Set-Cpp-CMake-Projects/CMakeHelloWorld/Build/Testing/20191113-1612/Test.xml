@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-MSBuild"
+	BuildStamp="20191113-1612-Experimental"
+	Name="DESKTOP-KJKOQG7"
+	Generator="ctest-3.16.0-rc3"
+	CompilerName="C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.23.28105/bin/Hostx64/x64/cl.exe"
+	CompilerVersion="19.23.28105.4"
+	OSName="Windows"
+	Hostname="DESKTOP-KJKOQG7"
+	OSRelease=" Personal"
+	OSVersion=" (Build 18362)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="14"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="16806"
+	TotalPhysicalMemory="8089"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2904"
+	>
+	<Testing>
+		<StartDateTime>Nov 13 21:42 India Standard Time</StartDateTime>
+		<StartTestTime>1573661530</StartTestTime>
+		<TestList>
+			<Test>./Test1</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>Test1</Name>
+			<Path>.</Path>
+			<FullName>./Test1</FullName>
+			<FullCommandLine>E:\git-pushed-elinus\Set-Cpp-CMake-Projects\CMakeHelloWorld\Build\Debug\CMakeHelloWorld.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0267095</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>E:\git-pushed-elinus\Set-Cpp-CMake-Projects\CMakeHelloWorld\Build\Debug\CMakeHelloWorld.exe</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>CMake Hello World!!
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Nov 13 21:42 India Standard Time</EndDateTime>
+		<EndTestTime>1573661530</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
