@@ -1,0 +1,22 @@
+[Day#1] Design pattern and Cpp smart pointers
+    - SOLID Principles
+    - State Design Pattern
+    - Brigde Pattern
+    - Factories: Factory Method, Abstract Factory and Builder
+    - RAII Pattern
+    - unique_ptr<> and shared_ptr<>
+
+[Day#2] Design Patterns, Callback and move semantics
+    - Composite
+    - Move constructor and move assignment operator
+    - Decorator
+    - Callback
+    - Observer
+    - Singleton
+
+[Day#3] Design Patterns, Cpp11 and references
+    - Memento
+    - Command Pattern
+    - Template Design Pattern
+    - Variadic templates, perfect forwarding
+    - lvalue and rvalue references, auto

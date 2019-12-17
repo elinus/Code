@@ -1,0 +1,29 @@
+﻿     Site: DESKTOP-KJKOQG7
+     Build name: Win32-MSBuild
+  Create new tag: 20191113-1612 - Experimental
+  Configure project
+     Each . represents 1024 bytes of output
+      . Size of output: 0K
+  Build project
+     Each symbol represents 1024 bytes of output.
+     '!' represents an error and '*' a warning.
+      . Size of output: 0K
+     0 Compiler errors
+     0 Compiler warnings
+  Test project E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build
+      Start 1: Test1
+  1/1 Test #1: Test1 ............................   Passed    0.03 sec
+  
+  100% tests passed, 0 tests failed out of 1
+  
+  Total Test time (real) =   0.03 sec
+  Performing coverage
+   Cannot find any coverage files. Ignoring Coverage request.
+  Submit files
+     SubmitURL: http://my.cdash.org/submit.php?project=CMakeHelloWorld
+     Uploaded: E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/Testing/20191113-1612/Configure.xml
+     Uploaded: E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/Testing/20191113-1612/Build.xml
+     Uploaded: E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/Testing/20191113-1612/Test.xml
+     Uploaded: E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/Testing/20191113-1612/Done.xml
+     Submission successful
+  Building Custom Rule E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/CMakeLists.txt

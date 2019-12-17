@@ -1,0 +1,201 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/bundle')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax enable
+filetype plugin on
+
+" search down into subfolders
+" Provide tab-completion for all file-related tasks
+set path+=**
+
+"Display all matching files when we tab complete
+set wildmenu
+
+set cursorline
+set ttyfast
+set title
+set mouse=a
+
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+
+set tabstop=4           " 4 space tab
+set expandtab           " use spaces for tabs
+set softtabstop=4       " 4 space tab
+set shiftwidth=4
+set nomodeline
+set autoindent
+set smartindent
+set cindent
+set ruler
+set visualbell
+set noerrorbells
+
+set wrap
+set textwidth=80
+" set colorcolumn=+1
+set formatoptions=qrn1
+
+set cursorline
+
+syntax on
+set laststatus=2
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set nocursorline        " highlight current line
+set wildmenu
+set lazyredraw
+set showmatch           " higlight matching parenthesis"
+set foldmethod=syntax
+set foldlevel=20
+inoremap {<CR> {<CR>}<C-o>O
+
+" Help delete character if it is 'empty space'
+" stolen from Vim manual
+function! Eatchar()
+    let c = nr2char(getchar())
+    return (c =~ '\s') ? '' : c
+endfunction
+
+" Replace abbreviation if we're not in comment or other unwanted places
+" stolen from Luc Hermitte's excellent http://hermitte.free.fr/vim/
+function! MapNoContext(key, seq)
+    let syn = synIDattr(synID(line('.'),col('.')-1,1),'name')
+    if syn =~? 'comment\|string\|character\|doxygen'
+        return a:key
+    else
+        exe 'return "' .
+        \ substitute( a:seq, '\\<\(.\{-}\)\\>', '"."\\<\1>"."', 'g' ) . '"'
+    endif
+endfunction
+
+" Create abbreviation suitable for MapNoContext
+function! Iab (ab, full)
+    exe "iab <silent> <buffer> ".a:ab." <C-R>=MapNoContext('".
+    \ a:ab."', '".escape (a:full.'<C-R>=Eatchar()<CR>', '<>\"').
+    \"')<CR>"
+endfunction
+
+call Iab('#d', '#define ')
+call Iab('#i', '#include <><Left>')
+call Iab('#I', '#include ""<Left>')
+call Iab('printf', 'printf ("\n");<C-O>?\<CR>')
+call Iab('c#', 'std::cout << "\n";<C-O>?\<CR>')
+call Iab('ss:', 'std::string ;<C-o>')
+call Iab('uns:', 'using namespace std;<C-o>')
+call Iab('if', 'if () {<CR>}<Left><C-O>?)<CR>')
+call Iab('for', 'for (;;) {<CR>}<C-O>?;;<CR>')
+call Iab('while', 'while () {<CR>}<C-O>?)<CR>')
+call Iab('else', 'else {<CR>x;<CR>}<C-O>?x;<CR><Del><Del>')
+call Iab('ifelse', 'if () {<CR>} else {<CR>}<C-O>?)<CR>')
+call Iab('intmain', 'int<Space>main (int argc, char *argv[])<CR>'.
+\ '{<CR>x;<CR>return 0;<CR>}<CR><C-O>?x;<CR><Del><Del>')
+
+function! s:insert_gates()
+    let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+    execute "normal! i#ifndef " . "__" . gatename . "__"
+    execute "normal! o#define " . "__" . gatename . "__"
+    execute "normal! Go#endif /* " . "__" . gatename . "__" . " */"
+    normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+" FILE BROWSING:
+" Tweaks for browsing
+" let g:netrw_banner=0        " disable annoying banner
+" let g:netrw_browse_split=4  " open in prior window
+" let g:netrw_altv=1          " open splits to the right
+" let g:netrw_liststyle=3     " tree view
+" let g:netrw_list_hide=netrw_gitignore#Hide()
+" let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+
+" autocmd VimEnter * if !argc() | Explore | endif
+" autocmd VimEnter * if isdirectory(expand('<afile>')) | Explore | endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Auto commands
+" Remember last line on file
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" Auto close NERDTree if it is the only left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" --- NERDTree ----
+" let NERDTreeShowBookmarks=1        "show bookmarks on startup
+" let NERDTreeHighlightCursorline=1   "Highlight the selected entry in the tree
+" let NERDTreeMinimalUI=1
+" let NERDTreeDirArrows=1
+let g:NERDTreeAutoDeleteBuffer = 1               " Automatically delete the buffer of the file you just deleted with NERDTree:
+let g:NERDTreeDirArrows = 1                      " Show dir arrows
+let g:NERDTreeDirArrowCollapsible=""            " Improve NERDTree arrow
+let g:NERDTreeDirArrowExpandable=""             " Improve NERDTree arrow
+let g:NERDTreeMinimalUI = 1                      " Change to minimal UI
+let g:NERDTreeQuitOnOpen = 1                     " Quit NERDTree after open file
+let g:NERDTreeShowBookmarks = 1                  " Show bookmarks on NERDTree
+let g:NERDTreeShowHidden = 1                     " Show hidden files on NERDTree
+let g:NERDTreeShowLineNumbers = 1                " Show line numbers on NERDTree
+let g:nerdtree_tabs_open_on_gui_startup = 0      " Do not show NERDTree on startup
+noremap <leader>nt :NERDTreeToggle<CR>
+" autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:webdevicons_conceal_nerdtree_brackets = 1  " Do not show brackets around icons in NERDTree
+
+set statusline+=%#warningmsg#
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
+
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+
+let g:cpp_class_scope_highlight=1
+let g:cpp_member_variable_highlight=1
+let g:cpp_class_decl_highlight=1
+let g:cpp_experimental_simple_template_highlight=1
+let g:cpp_experimental_template_highlight=1
+let g:cpp_concepts_highlight=1
+let c_no_curly_error=1
+
+set tags+=~/.vim/tags/cpp
+
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256=1

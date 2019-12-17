@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\git-pushed-elinus\Set-Cpp-CMake-Projects\CMakeHelloWorld\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\git-pushed-elinus\Set-Cpp-CMake-Projects\CMakeHelloWorld\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{58A4BAC2-4F34-3130-A8BE-37C690D4D646}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
