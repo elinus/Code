@@ -1,0 +1,7 @@
+Microsoft (R) Build Engine version 16.3.0+0f4c62fea for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Checking Build System
+  Building Custom Rule E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/CMakeLists.txt
+  CMakeHelloWorld.vcxproj -> E:\git-pushed-elinus\Set-Cpp-CMake-Projects\CMakeHelloWorld\Build\Debug\CMakeHelloWorld.exe
+  Building Custom Rule E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/CMakeLists.txt

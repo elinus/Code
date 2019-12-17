@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Simple build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "hello_vsc.cpp"
+            ]
+        },
+        {
+            "label": "Show ls",
+            "type": "shell",
+            "command": "ls"
+        }
+    ]
+}

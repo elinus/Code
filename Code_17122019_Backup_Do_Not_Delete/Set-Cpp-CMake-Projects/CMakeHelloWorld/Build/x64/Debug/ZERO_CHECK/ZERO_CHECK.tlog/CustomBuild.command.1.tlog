@@ -1,0 +1,10 @@
+^E:\GIT-PUSHED-ELINUS\SET-CPP-CMAKE-PROJECTS\CMAKEHELLOWORLD\BUILD\CMAKEFILES\4FDF5DC939E6C12C4E20856A242DD4AA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld -BE:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/CMakeHelloWorld.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

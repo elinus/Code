@@ -1,0 +1,2 @@
+E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/_CPack_Packages/win64/ZIP/CMakeHelloWorld-0.1.1-win64/bin/CMakeHelloWorld.exe
+E:/git-pushed-elinus/Set-Cpp-CMake-Projects/CMakeHelloWorld/Build/_CPack_Packages/win64/ZIP/CMakeHelloWorld-0.1.1-win64/src/Main.cpp
