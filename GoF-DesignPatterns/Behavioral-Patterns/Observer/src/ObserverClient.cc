@@ -3,7 +3,7 @@
 #include "Payment.h"
 #include <iostream>
 
-int main(int argc, char *argv[]) {
+int main() {
   Order *order = new Order();
   order->addItem(Item("Pizza", 6.99));
   order->addItem(Item("Wine", 9.99));
