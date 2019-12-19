@@ -28,17 +28,19 @@ add_compile_options(
     #-Wformat=2 # warn on security issues around functions that format output (i.e printf)
     )
 
+include_directories(include)
+
 add_executable(
     a.out
-    CustomerDisplay.cc
-    CashierDisplay.cc
-    AddItemTopic.cc
-    AddPaymentTopic.cc
-    CompleteOrderTopic.cc
-    Item.cc
-    Payment.cc
-    Order.cc
-    ObserverClient.cc
+    src/CustomerDisplay.cc
+    src/CashierDisplay.cc
+    src/AddItemTopic.cc
+    src/AddPaymentTopic.cc
+    src/CompleteOrderTopic.cc
+    src/Item.cc
+    src/Payment.cc
+    src/Order.cc
+    src/ObserverClient.cc
     )
 
 
