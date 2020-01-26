@@ -1,12 +1,3 @@
-[![Build Status](https://travis-ci.com/elinus/Code.svg?branch=master)](https://travis-ci.com/elinus/Code) 
-[![CodeFactor](https://www.codefactor.io/repository/github/elinus/Code/badge)](https://www.codefactor.io/repository/github/elinus/Code) 
-![repo-size](https://img.shields.io/github/repo-size/elinus/Code.svg) 
-![code-size](https://img.shields.io/github/languages/code-size/elinus/Code.svg)	
-![Pull requests](https://img.shields.io/github/issues-pr/elinus/Code.svg) 
-![Closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/elinus/Code.svg) 
-![Tweet](https://img.shields.io/twitter/url/https/elinus/Code.svg?style=social)
-![Follow Me](https://img.shields.io/twitter/follow/ayruomlinus.svg?style=social)
-
 # Idea is to code on daily basis. 
 
 ## some useful commands 
