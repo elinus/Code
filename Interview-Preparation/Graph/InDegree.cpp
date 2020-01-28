@@ -21,27 +21,6 @@ class Graph {
             adj[v].push_back(u);
         }
 
-        void DfsUtil(int v, std::vector<bool> & marked) {
-            std::cout << std::setw(3) << v;
-            marked[v] = true;
-            for (auto it = adj[v].begin(); it != adj[v].end(); ++it) {
-                if (!marked[*it]) {
-                    DfsUtil(*it, marked);
-                }
-            }
-        }
-
-        void Dfs() {
-            std::cout << "DFS Traversal:";
-            std::vector<bool> marked(V, false);
-            for (int i = 0; i <  V; i++) {
-                if (!marked[i]) {
-                    DfsUtil(i, marked);
-                }
-            }
-            std::cout << "\n";
-        }
-
         void PrintAdjacencyList() {
             for (int i = 0; i < V; i++) {
                 std::cout << std::setw(3) <<  i << "|";
@@ -51,6 +30,15 @@ class Graph {
                 std::cout << "\n";
             }
         }
+
+        void Degree() {
+            for (int i = 0; i < V; i++) {
+                if (adj[i].size() > 0) {
+                    std::cout << std::setw(3) << i << "|" << adj[i].size() << "\n";
+                }
+            }
+        }
+
 };
 
 int main (int argc, char *argv[]) {
@@ -68,7 +56,7 @@ int main (int argc, char *argv[]) {
 
     gObj.PrintAdjacencyList();
     std::cout << "\n\n";
-    gObj.Dfs();
+    gObj.Degree();
     return 0;
 }
 

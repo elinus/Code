@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <queue>
 
 class Graph {
     private:
@@ -21,22 +22,30 @@ class Graph {
             adj[v].push_back(u);
         }
 
-        void DfsUtil(int v, std::vector<bool> & marked) {
-            std::cout << std::setw(3) << v;
+        void BfsUtil(int v, std::vector<bool> & marked) {
+            std::queue<int> que;
+            que.push(v);
             marked[v] = true;
-            for (auto it = adj[v].begin(); it != adj[v].end(); ++it) {
-                if (!marked[*it]) {
-                    DfsUtil(*it, marked);
+            while (!que.empty()) {
+                v = que.front();
+                std::cout << std::setw(3) << v;
+                que.pop();
+                for (auto it = adj[v].begin(); it != adj[v].end(); ++it) {
+                    if (!marked[*it]) {
+                        que.push(*it);
+                        marked[*it] = true;
+                    }
                 }
             }
+
         }
 
-        void Dfs() {
-            std::cout << "DFS Traversal:";
+        void Bfs() {
+            std::cout << "BFS Traversal:";
             std::vector<bool> marked(V, false);
             for (int i = 0; i <  V; i++) {
                 if (!marked[i]) {
-                    DfsUtil(i, marked);
+                    BfsUtil(i, marked);
                 }
             }
             std::cout << "\n";
@@ -68,7 +77,7 @@ int main (int argc, char *argv[]) {
 
     gObj.PrintAdjacencyList();
     std::cout << "\n\n";
-    gObj.Dfs();
+    gObj.Bfs();
     return 0;
 }
 
