@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SimpleWorker worker = null;
+    private Worker worker = null;
     private TextView tvMessage = null;
     private Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvMessage = findViewById(R.id.message);
 
-        worker = new SimpleWorker();
+        worker = new Worker();
         worker.execute(() -> {
             try {
                 Thread.sleep(2000);
