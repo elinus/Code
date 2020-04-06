@@ -1,4 +1,4 @@
 rootProject.name='SharedMemoryDemo'
 include ':app'
-include ':sharedmemory'
+include ':sharedmemorylib'
 include ':clientsharedmemory'

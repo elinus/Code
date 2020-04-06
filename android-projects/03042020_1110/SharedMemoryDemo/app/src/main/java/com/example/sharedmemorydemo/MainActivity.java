@@ -3,6 +3,7 @@ package com.example.sharedmemorydemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,36 +11,39 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edpos, edval;
-    Button bn;
-    TextView tv;
+    public static final String TAG = "ShmServer";
+
+    EditText etData;
+    Button btnSet, btnGet;
+    TextView tvResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SharedMemoryLib.OpenSharedMem("sh1",1000,true);
 
-        edpos = (EditText)findViewById(R.id.ed2);
-        edval = (EditText)findViewById(R.id.ed);
+        final int fd = SharedMemoryLib.OpenSharedMem("sh1",1024,true);
+        Log.i(TAG, "onCreate() , fd :: " + fd);
 
-        tv=(TextView)findViewById(R.id.tv);
-        bn = (Button)findViewById(R.id.btnSet);
-        bn.setOnClickListener(new View.OnClickListener() {
+        etData = (EditText) findViewById(R.id.etData);
+
+        tvResult = (TextView) findViewById(R.id.tvResult);
+
+        btnSet = (Button) findViewById(R.id.btnSet);
+        btnSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedMemoryLib.setValue("sh1",Integer.parseInt(edpos.getText().toString()),Integer.parseInt(edval.getText().toString()));
+                SharedMemoryLib.setValue(fd, Integer.parseInt(etData.getText().toString()));
             }
         });
 
-        Button bget = (Button)findViewById(R.id.btnGet);
-        bget.setOnClickListener(new View.OnClickListener() {
+        btnGet = (Button) findViewById(R.id.btnGet);
+        btnGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int res = SharedMemoryLib.getValue("sh1",Integer.parseInt(edpos.getText().toString()));
-                tv.setText("res:"+ res);
-
+                int res = SharedMemoryLib.getValue(fd);
+                tvResult.setText("res: " + res);
             }
         });
 

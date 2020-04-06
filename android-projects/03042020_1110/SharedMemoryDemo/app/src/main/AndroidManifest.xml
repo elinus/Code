@@ -12,11 +12,14 @@
         <service
             android:name=".SharedMemoryService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.sharedmemorydemo.SharedMemoryService"/>
+            </intent-filter>
+        </service>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
