@@ -29,7 +29,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path "../CMakeLists.txt"
+            path "src/main/cpp/CMakeLists.txt"
         }
     }
 }
@@ -42,5 +42,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':sharedmemory')
+    implementation project(path: ':sharedmemorylib')
 }
