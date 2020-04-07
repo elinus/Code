@@ -65,12 +65,12 @@ public class MainActivity extends Activity {
             iSharedMemory = ISharedMemory.Stub.asInterface(service);
             try {
                 descriptor = iSharedMemory.OpenSharedMem("sh1", 1024, false);
+                Log.d(TAG, "fd(iSharedMemory.OpenSharedMem) = " + descriptor.getFd());
                 SharedMemoryClientLib.setMap(descriptor.getFd(), 1024);
                 Log.d(TAG, "fd = " + descriptor.getFd());
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
-
         }
 
         @Override

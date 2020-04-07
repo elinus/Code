@@ -7,7 +7,7 @@
 #include <android/log.h>
 
 // {{-->> /* Android Logging */
-#define  LOG_TAG    "ShmServer"
+#define  LOG_TAG    "Shm-Server"
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN, LOG_TAG, __VA_ARGS__)
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
@@ -28,12 +28,16 @@ struct SharedMemoryArea {
     int *map;
     int fd;
     int size;
-} shmObj;
+} shmObj {nullptr, 0, 0};
 
 
 static jint getFD(JNIEnv *env, jclass clazz, jstring path,
                   jint size) {
     const char *name = env->GetStringUTFChars(path, NULL);
+    if (shmObj.fd != -1 && shmObj.fd != 0) {
+        LOGD("%s :: shmObj.fd = %d, path = %s", __func__, shmObj.fd, name);
+        return shmObj.fd;
+    }
     jint fd = open(ASHMEM_NAME_DEF, O_RDWR);
     ioctl(fd, ASHMEM_SET_NAME, name);
     ioctl(fd, ASHMEM_SET_SIZE, size);
@@ -52,6 +56,7 @@ static jint setVal(JNIEnv *env, jclass clazz, jint fd, jint num) {
     LOGD("%s :: fd = %d, num = %d", __func__, fd, num);
     if (shmObj.fd == fd) {
         *(shmObj.map) = num;
+        LOGD("%s :: fd = %d, *(shmObj.map) = %d", __func__, fd, *(shmObj.map));
         return 0;
     }
     return -1;
@@ -60,6 +65,7 @@ static jint setVal(JNIEnv *env, jclass clazz, jint fd, jint num) {
 static jint getVal(JNIEnv *env, jclass clazz, jint fd) {
     LOGD("%s :: fd = %d", __func__, fd);
     if (shmObj.fd == fd) {
+        LOGD("%s :: fd = %d, *(shmObj.map) = %d", __func__, fd, *(shmObj.map));
         return *(shmObj.map);
     }
     return -1;
