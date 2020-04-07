@@ -8,10 +8,15 @@ public class SharedMemoryLib {
         System.loadLibrary("native-lib");
     }
 
+    static int fd_ = -1;
+
     public static int OpenSharedMem(String name, int size, boolean create)  {
         Log.d(MainActivity.TAG, "OpenSharedMem() :: name = " + name + ", size = " + size
                 + ", create = " + create);
-        return getFD(name, size);
+        if (!create) return fd_;
+        if (fd_ != -1) return fd_;
+        fd_ = getFD(name, size);
+        return fd_;
     }
 
     public static int setValue(int fd, int val){
