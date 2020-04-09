@@ -12,12 +12,32 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:gravity="center"
+    android:padding="30px"
     android:orientation="vertical">
         <TextView
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ShmDemo Android-Q # ServerApp" />
+
+        <Switch
+            android:id="@+id/switch_native_java"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Switch b/w Native and Java(os.SharedMemory) Impl."
+            android:padding="40px"
+            android:textColor="#f00"
+            android:textOn="Java"
+            android:textOff="Native" />
+
+        <TextView
+            android:id="@+id/switch_native_java_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:typeface="monospace"
+            android:textStyle="bold"
+            android:text="None!" />
     </LinearLayout>
 
     <LinearLayout
