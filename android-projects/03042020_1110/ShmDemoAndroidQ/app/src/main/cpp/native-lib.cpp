@@ -76,7 +76,7 @@ extern "C" {
 #endif
 
 JNIEXPORT jboolean JNICALL
-Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_createShm(
+Java_com_example_shmdemoandroidq_SharedMemoryServerNativeLib_createShm(
         JNIEnv *env, jclass clazz) {
     if (shmHandle == nullptr) {
         shmHandle = new SharedMemory("SysIntDemoShm", 1024);
@@ -86,7 +86,7 @@ Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_createShm(
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_releaseShm(
+Java_com_example_shmdemoandroidq_SharedMemoryServerNativeLib_releaseShm(
         JNIEnv *env, jclass clazz) {
     if (shmHandle != nullptr) {
         delete shmHandle;
@@ -97,7 +97,7 @@ Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_releaseShm(
 }
 
 JNIEXPORT void JNICALL
-Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_setShmData(
+Java_com_example_shmdemoandroidq_SharedMemoryServerNativeLib_setShmData(
         JNIEnv *env, jclass clazz, jstring data) {
     const char* buffer =  env->GetStringUTFChars(data, nullptr);
     if (strlen(buffer) > shmHandle->getSize()) {
@@ -110,20 +110,20 @@ Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_setShmData(
 }
 
 JNIEXPORT jint JNICALL
-Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_getShmSize(
+Java_com_example_shmdemoandroidq_SharedMemoryServerNativeLib_getShmSize(
         JNIEnv *env, jclass clazz) {
     return shmHandle->getSize();
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_getShmData(
+Java_com_example_shmdemoandroidq_SharedMemoryServerNativeLib_getShmData(
         JNIEnv *env, jclass clazz) {
     std::string buffer = shmHandle->getBuffer();
     return env->NewStringUTF(buffer.c_str());
 }
 
 JNIEXPORT jint JNICALL
-Java_com_example_shmdemoandroidq_SharedMemoryServerLibrary_getShmFd(
+Java_com_example_shmdemoandroidq_SharedMemoryServerNativeLib_getShmFd(
         JNIEnv *env, jclass clazz) {
     return shmHandle->getSharedMemoryFd();
 }

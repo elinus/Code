@@ -12,7 +12,7 @@ public class ShmMapImpl extends IShmMap.Stub {
 
     @Override
     public ParcelFileDescriptor getShmFd() throws RemoteException {
-        int fd = SharedMemoryServerLibrary.getShmFd();
+        int fd = SharedMemoryServerNativeLib.getShmFd();
         try {
             Log.d(MainActivity.TAG, "getShmFd :: fd = " + fd);
             return ParcelFileDescriptor.fromFd(fd);
@@ -24,7 +24,7 @@ public class ShmMapImpl extends IShmMap.Stub {
 
     @Override
     public int getShmSize() throws RemoteException {
-        int size = SharedMemoryServerLibrary.getShmSize();
+        int size = SharedMemoryServerNativeLib.getShmSize();
         Log.d(MainActivity.TAG, "getShmSize :: size = " + size);
         return size;
     }

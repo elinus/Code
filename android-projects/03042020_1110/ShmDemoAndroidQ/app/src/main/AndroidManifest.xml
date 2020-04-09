@@ -10,16 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
+            android:name=".SharedMemoryServerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.shmdemoandroidq.SharedMemoryServerService" />
+            </intent-filter>
+        </service>
+        <service
             android:name=".ShmMapService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.shmdemoandroidq.ShmMapService"/>
+                <action android:name="com.example.shmdemoandroidq.ShmMapService" />
             </intent-filter>
         </service>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

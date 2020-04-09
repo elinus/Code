@@ -1,6 +1,6 @@
 package com.example.shmdemoandroidq;
 
-public class SharedMemoryServerLibrary {
+public class SharedMemoryServerNativeLib {
 
     static {
         System.loadLibrary("native-lib");
