@@ -4,39 +4,51 @@
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/mman.h>
+#include <android/log.h>
 
-int *map ;
-int size;
+// {{-->> /* Android Logging */
+#define  LOG_TAG    "Shm-Client"
+#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+#define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN, LOG_TAG, __VA_ARGS__)
+#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+// <<--}}
 
-static void setMap(JNIEnv *env, jclass cl, jint fd, jint sz) {
-    size = sz;
-    map = (int *)mmap(0,size,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+struct SharedMemoryArea {
+    int *map;
+    int fd;
+    int size;
+} shmObj;
+
+
+static void setMap(JNIEnv *env, jclass cl, jint fd, jint size) {
+    LOGD("%s :: fd = %d, size = %d", __func__, fd, size);
+    shmObj.fd = fd;
+    shmObj.size = size;
+    shmObj.map = (int *)mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 }
 
-static jint setVal(JNIEnv *env, jclass cl, jint pos,jint num)
-{
-    if(pos < (size/ sizeof(int))) {
-        map[pos] = num;
+static jint setVal(JNIEnv *env, jclass cl, int fd, jint num) {
+    LOGD("%s :: fd = %d, num = %d", __func__, fd, num);
+    if (shmObj.size == fd) {
+        *(shmObj.map) = num;
         return 0;
     }
     return -1;
 }
 
-static jint getVal(JNIEnv *env, jclass cl, jint pos) {
-    if(pos < (size/ sizeof(int))) {
-        return map[pos];
-    }
+static jint getVal(JNIEnv *env, jclass cl, int fd) {
+    LOGD("%s :: fd = %d", __func__, fd);
+    if (shmObj.fd == fd) return *(shmObj.map);
     return -1;
 }
-
 
 static JNINativeMethod method_table[] = {
         { "setVal", "(II)I", (void *) setVal },
         { "getVal", "(I)I", (void *) getVal },
-        { "setMap", "(II)V", (void *)setMap }
+        { "setMap", "(II)V", (void *) setMap }
 
 };
-
 
 extern "C" jint JNI_OnLoad(JavaVM* vm, void* reserved) {
     JNIEnv* env;

@@ -1,0 +1,5 @@
+rootProject.name='ShmDemoAndroidQ'
+include ':app'
+include ':shmlib'
+include ':shmclientandroidq'
+include ':sharedmemoryservice'

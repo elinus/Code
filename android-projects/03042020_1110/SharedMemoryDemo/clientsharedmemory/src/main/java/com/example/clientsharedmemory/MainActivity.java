@@ -1,7 +1,6 @@
 package com.example.clientsharedmemory;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -9,6 +8,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,52 +16,66 @@ import android.widget.TextView;
 
 import com.example.sharedmemory.ISharedMemory;
 
-public class MainActivity extends AppCompatActivity implements ServiceConnection {
+public class MainActivity extends Activity {
 
-    ISharedMemory shmService;
-    Button b;
-    EditText ed,ed2;
-    TextView tv;
+    public static final String TAG = "ShmClient";
+
+    ISharedMemory iSharedMemory = null;
+    ParcelFileDescriptor descriptor = null;
+
+    Button btnSet, btnGet;
+    EditText etData;
+    TextView tvResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "onCreate()");
+
         bindService(new Intent("com.example.sharedmemorydemo.SharedMemoryService")
-                .setPackage("com.example.sharedmemorydemo"),this, BIND_AUTO_CREATE);
-        tv = (TextView)findViewById(R.id.tv);
-        ed=(EditText)findViewById(R.id.ed);
-        ed2 = (EditText)findViewById(R.id.ed2);
-        b=(Button)findViewById(R.id.btnGet);
-        b.setOnClickListener(new View.OnClickListener() {
+                        .setPackage("com.example.sharedmemorydemo"),
+                connection, BIND_AUTO_CREATE);
+        Log.d(TAG, "onCreate - bindService.");
+
+        tvResult = (TextView) findViewById(R.id.tvResult);
+        etData = (EditText)  findViewById(R.id.etData);
+
+        btnGet = (Button) findViewById(R.id.btnGet);
+        btnGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tv.setText("val:" + SharedMemoryClientLib.getVal(Integer.parseInt(ed2.getText().toString())));
-
+                tvResult.setText("Val: " + SharedMemoryClientLib.getVal(descriptor.getFd()));
             }
         });
-        Button bset = (Button)findViewById(R.id.btnSet);
-        bset.setOnClickListener(new View.OnClickListener() {
+
+        btnSet = (Button) findViewById(R.id.btnSet);
+        btnSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedMemoryClientLib.setVal(Integer.parseInt(ed2.getText().toString()),Integer.parseInt(ed.getText().toString()));
+                SharedMemoryClientLib.setVal(descriptor.getFd(), Integer.parseInt(etData.getText().toString()));
             }
         });
     }
 
-    @Override
-    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        shmService = ISharedMemory.Stub.asInterface(iBinder);
-        try {
-            ParcelFileDescriptor p = shmService.OpenSharedMem("sh1", 1000, false);
-            SharedMemoryClientLib.setMap(p.getFd(), 1000);
-        } catch (RemoteException e) {
-            e.printStackTrace();
+    private ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.d(TAG, "Service connected!");
+            iSharedMemory = ISharedMemory.Stub.asInterface(service);
+            try {
+                descriptor = iSharedMemory.OpenSharedMem("sh1", 1024, false);
+                Log.d(TAG, "fd(iSharedMemory.OpenSharedMem) = " + descriptor.getFd());
+                SharedMemoryClientLib.setMap(descriptor.getFd(), 1024);
+                Log.d(TAG, "fd = " + descriptor.getFd());
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
-    }
-
-    @Override
-    public void onServiceDisconnected(ComponentName componentName) {
-
-    }
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Log.d(TAG, "Service disconnected!");
+        }
+    };
 }
