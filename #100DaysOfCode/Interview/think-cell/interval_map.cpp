@@ -21,49 +21,52 @@ class interval_map {
     // includes keyBegin, but excludes keyEnd.
     // If !( keyBegin < keyEnd ), this designates an empty interval,
     // and assign must do nothing.
-    void assign( K const& keyBegin, K const& keyEnd, V const& val ) {
-        if (!(keyBegin < keyEnd)) return; 
+void assign(K const & keyBegin, K const & keyEnd, V const & val) {
+        if (!(keyBegin < keyEnd)) return;
 
-        auto begin_lb = m_map.lower_bound(keyBegin); 
-        auto begin_ub = m_map.upper_bound(keyBegin);
-        auto end_lb = m_map.lower_bound(keyEnd);
-        auto end_ub = m_map.upper_bound(keyEnd);
-        K begin_search, end_search;
-        auto begin_delete = begin_lb;
-        auto end_delete = end_lb;
+		using iterator_t = typename std::map<K, V>::iterator;
 
-        begin_search = begin_lb->first;
-        if (--begin_lb != m_map.end()) begin_search = begin_lb->first;
+		iterator_t lower_bound_begin = m_map.lower_bound(keyBegin); 
+		iterator_t upper_bound_begin = m_map.upper_bound(keyBegin);
+		iterator_t lower_bound_end = m_map.lower_bound(keyEnd);
+		iterator_t upper_bound_end = m_map.upper_bound(keyEnd);
+		iterator_t it_delete_begin, it_delete_end;
+		K key_begin_search, key_end_search;
+		
+        it_delete_begin = lower_bound_begin; 
+        key_begin_search = lower_bound_begin->first; 
+		
+        if (--lower_bound_begin != m_map.end()) {
+			key_begin_search = lower_bound_begin->first;
+		}
+		if (lower_bound_end == upper_bound_end) 
+			--lower_bound_end;
+		it_delete_end = lower_bound_end;
+		
+        V tail = it_delete_end->second; 
+		key_end_search = lower_bound_end->first;
 
-        if (end_lb == end_ub) --end_lb;
-        end_delete = end_lb;
+		m_map.erase(it_delete_begin, ++it_delete_end);
 
-        V tail = end_delete->second;
-        end_search = end_lb->first;
+		m_map.insert(std::begin(m_map), std::make_pair(keyBegin, val));
+		m_map.insert(std::begin(m_map), std::make_pair(keyEnd, tail));
 
-        m_map.erase(begin_delete, ++end_delete); 
-
-        m_map.insert(std::begin(m_map), std::make_pair(begin_search, val));
-        m_map.insert(std::begin(m_map), std::make_pair(end_search, tail));
-
-        auto it = m_map.find(begin_search);
-        V prev = it->second;
-        it++;
-        auto eit = m_map.find(end_search);
-        eit++;
-        while (it != eit) {
-            if (it->second == prev) {
-                auto dit = it;
-                it++;
-                m_map.erase(dit);
-            } else {
-                prev = it->second;
-                it++;
-            }
-        }
-    }
-
-
+		iterator_t it = m_map.find(key_begin_search); 
+		V prev = it->second;
+		it++;
+		iterator_t it_end = m_map.find(key_end_search);
+		it_end++;
+		while (it != it_end) {
+			if (it->second == prev) {
+				iterator_t it_del = it;
+				it++;
+				m_map.erase(it_del);
+			} else {
+				prev = it->second;
+				it++;
+			}
+		}
+	}
 
     // look-up of the value associated with key
     V const& operator[]( K const& key ) const {
