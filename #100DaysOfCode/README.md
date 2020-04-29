@@ -15,3 +15,9 @@
     - gfg :: DB
     ```
     - LEARNING :: No more time waste!
+#### Day#2
+    - Not given my full efoorts for think-cell test.
+    - Mostly wasted my day
+
+#### Day#3
+    - All day waste
