@@ -38,25 +38,29 @@ public class MainActivity extends AppCompatActivity {
         tvSwitchNativeJava = (TextView) findViewById(R.id.switch_native_java_text);
         switchNativeAndJava = (Switch) findViewById(R.id.switch_native_java);
 
-        switchNativeAndJava.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    btnGet.setEnabled(false);
-                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOn());
-                } else {
-                    btnGet.setEnabled(true);
-                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOff());
-                }
-            }
-        });
+        switchNativeAndJava.setChecked(false);
+        switchNativeAndJava.setEnabled(false);
+        btnGet.setEnabled(false);
+
+//        switchNativeAndJava.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    btnGet.setEnabled(false);
+//                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOn());
+//                } else {
+//                    btnGet.setEnabled(true);
+//                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOff());
+//                }
+//            }
+//        });
 
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (switchNativeAndJava.isChecked()) {
-                    shm = SharedMemoryProducer.createShm("SysIntSharedMemory", 1024);
+                    shm = SharedMemoryProducer.createShm("SysIntShm", 1024);
                     if (shm != null) {
                         Log.i(TAG, "<os.SharedMemory> created successfully. " +
                                 "Size = " + shm.getSize());

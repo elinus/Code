@@ -5,6 +5,8 @@ package com.example.sharedmemoryservice;
 import android.os.SharedMemory;
 
 interface ISharedMemoryService {
-    SharedMemory getShm(String name, int size);
-    int getByteBufferDataLength();
+    SharedMemory getShm();
+    int getShmSize();
+    String getShmName();
+    int getShmOffset();
 }
