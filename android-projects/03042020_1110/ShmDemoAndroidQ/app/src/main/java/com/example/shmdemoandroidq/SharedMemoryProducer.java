@@ -9,6 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
 public class SharedMemoryProducer {
+
     public static final String TAG = MainActivity.TAG + "::Producer";
     public static int BYTE_BUFFER_DATA_LENGTH = 0;
     private static SharedMemory shm_instance = null;
@@ -17,9 +18,7 @@ public class SharedMemoryProducer {
     private static int shm_size = 0;
 
     public static SharedMemory createShm(String name, int size) {
-
         if (shm_instance != null) return shm_instance;
-
         try {
             shm_instance = SharedMemory.create(name, size);
             if (shm_instance != null) {
@@ -29,6 +28,7 @@ public class SharedMemoryProducer {
                     Log.d(TAG, "Shm & buffer mapping success. "
                             + ":: buf. = " + buffer.toString()
                             + ", hash = " + buffer.hashCode());
+                    Log.d(TAG, String.valueOf(shm_instance.describeContents()));
                 } else {
                     shm_instance = null;
                     Log.e(TAG, "Error: Shm & buffer mapping failed");
@@ -75,5 +75,21 @@ public class SharedMemoryProducer {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static SharedMemory getShm() {
+        return shm_instance;
+    }
+
+    public static int getShmSize() {
+        return shm_size;
+    }
+
+    public static String getShmName() {
+        return shm_name;
+    }
+
+    public static int getShmOffset() {
+        return 0;
     }
 }

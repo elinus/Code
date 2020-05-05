@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bindService(new Intent("com.example.shmdemoandroidq.SharedMemoryServerService")
-                        .setPackage("com.example.shmdemoandroidq"),
-                shmSvcConn, BIND_AUTO_CREATE);
-        Log.d(TAG, "onCreate() - SharedMemoryServerService bindService done.");
+//        bindService(new Intent("com.example.shmdemoandroidq.SharedMemoryServerService")
+//                        .setPackage("com.example.shmdemoandroidq"),
+//                shmSvcConn, BIND_AUTO_CREATE);
+//        Log.d(TAG, "onCreate() - SharedMemoryServerService bindService done.");
 
-//        bindService(new Intent("com.example.shmdemoandroidq.ShmMapService")
-//                .setPackage("com.example.shmdemoandroidq"), connection, BIND_AUTO_CREATE);
-//        Log.d(TAG, "onCreate() - ShmMapService bindService done.");
+        bindService(new Intent("com.example.shmdemoandroidq.ShmMapService")
+                .setPackage("com.example.shmdemoandroidq"), connection, BIND_AUTO_CREATE);
+        Log.d(TAG, "onCreate() - ShmMapService bindService done.");
 
         btnSet = (Button) findViewById(R.id.setData);
         btnGet = (Button) findViewById(R.id.getData);
@@ -60,21 +60,26 @@ public class MainActivity extends AppCompatActivity {
         tvSwitchNativeJava = (TextView) findViewById(R.id.switch_native_java_text);
         switchNativeAndJava = (Switch) findViewById(R.id.switch_native_java);
 
-        switchNativeAndJava.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    btnSet.setEnabled(false);
-                    etDataForShm.setEnabled(false);
-                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOn());
+        btnSet.setEnabled(false);
+        etDataForShm.setEnabled(false);
+        switchNativeAndJava.setEnabled(false);
+        switchNativeAndJava.setChecked(false);
 
-                } else {btnGet.setEnabled(true);
-                    btnSet.setEnabled(true);
-                    etDataForShm.setEnabled(true);
-                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOff());
-                }
-            }
-        });
+//        switchNativeAndJava.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    btnSet.setEnabled(false);
+//                    etDataForShm.setEnabled(false);
+//                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOn());
+//
+//                } else {btnGet.setEnabled(true);
+//                    btnSet.setEnabled(true);
+//                    etDataForShm.setEnabled(true);
+//                    tvSwitchNativeJava.setText(switchNativeAndJava.getTextOff());
+//                }
+//            }
+//        });
 
         btnSet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         if (iSharedMemoryService == null) return;
         try {
             SharedMemoryConsumer.BYTE_BUFFER_DATA_LENGTH =
-                    iSharedMemoryService.getByteBufferDataLength();
+                    iSharedMemoryService.getShmOffset(); /* TODO: Need to fix this */
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -183,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "Service <SvcConn> connected!");
             iSharedMemoryService = ISharedMemoryService.Stub.asInterface(service);
             try {
-                SharedMemory shm = iSharedMemoryService.getShm("SysIntSharedMemory", 1024);
+                SharedMemory shm = iSharedMemoryService.getShm();
                 if (SharedMemoryConsumer.mapShm(shm, shm.getSize())) {
                     showShmMapToast(true);
                 } else {

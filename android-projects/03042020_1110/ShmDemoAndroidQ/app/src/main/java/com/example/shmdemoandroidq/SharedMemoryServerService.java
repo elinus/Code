@@ -21,14 +21,23 @@ public class SharedMemoryServerService extends Service {
     private static class SharedMemoryServerServiceImpl extends ISharedMemoryService.Stub {
 
         @Override
-        public SharedMemory getShm(String name, int size) throws RemoteException {
-            return SharedMemoryProducer.createShm(name, size);
+        public SharedMemory getShm() throws RemoteException {
+            return SharedMemoryProducer.getShm();
         }
 
         @Override
-        public int getByteBufferDataLength() throws RemoteException {
-            return SharedMemoryProducer.BYTE_BUFFER_DATA_LENGTH;
+        public int getShmSize() throws RemoteException {
+            return SharedMemoryProducer.getShmSize();
         }
 
+        @Override
+        public String getShmName() throws RemoteException {
+            return SharedMemoryProducer.getShmName();
+        }
+
+        @Override
+        public int getShmOffset() throws RemoteException {
+            return 0;
+        }
     }
 }
