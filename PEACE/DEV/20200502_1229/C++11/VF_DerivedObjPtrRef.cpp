@@ -38,9 +38,14 @@ int main(int argc, char const *argv[])
     Derived *pDerived { &derived };
     std::cout << "pDerived is a " << pDerived->getName() << " and has value " << pDerived->getValue() << '\n';
 
+    // Object slicing
+    Base base { derived };
+    std::cout << "(Object slicing)base is a " << base.getName() << " and has value " << base.getValue() << '\n';
+
     Base &rBase { derived };
     std::cout << "rBase is a " << rBase.getName() << " and has value " << rBase.getValue() << '\n';
     Base *pBase { &derived };
     std::cout << "pBase is a " << pBase->getName() << " and has value " << pBase->getValue() << '\n';
+
     return 0;
 }
