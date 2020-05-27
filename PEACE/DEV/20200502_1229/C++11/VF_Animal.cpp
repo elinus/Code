@@ -12,17 +12,19 @@ class Animal {
     const std::string & getName() const {
         return m_Name;
     }
-    virtual std::string_view speak() const {
-        return "???";
-    }
+    virtual std::string_view speak() = 0;
 };
+
+std::string_view Animal::speak() {
+    return "BuzzZ";
+}
 
 class Cat : public Animal {
     public:
     Cat(const std::string & name)
         : Animal { name }
     {}
-    virtual std::string_view speak() const {
+    virtual std::string_view speak() {
         return "Meow";
     }
 };
@@ -32,8 +34,18 @@ class Dog : public Animal {
     Dog(const std::string & name)
         : Animal { name }
     {}
-    virtual std::string_view speak() const {
+    virtual std::string_view speak() {
         return "Woof";
+    }
+};
+
+class DragonFly : public Animal {
+    public:
+    DragonFly(const std::string & name)
+        : Animal { name }
+    {}
+    virtual std::string_view speak() {
+        return Animal::speak();
     }
 };
 
