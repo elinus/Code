@@ -38,6 +38,17 @@ int main (int argc, const char *argv[]) {
         assert(!p);
         q->bar();
     }
+
+    std::cout << "Runtime polymorphism demo\n";
+    {
+        std::unique_ptr<B> p = std::make_unique<D>();
+        p->bar();
+        std::vector<std::unique_ptr<B>> v;
+        v.push_back(std::make_unique<D>());
+        v.push_back(std::move(p));
+        v.emplace_back(new D);
+        for(auto& p: v) p->bar();
+    }
     return 0;
 }
 
