@@ -34,7 +34,7 @@ void close_file(std::FILE *fp) {
     std::fclose(fp);
 }
 
-int main (int argc, const char *argv[]) {
+int main_() {
     std::cout << "Unique ownership semantic demo\n"; 
     {
         auto p = std::make_unique<D>();
@@ -77,6 +77,36 @@ int main (int argc, const char *argv[]) {
         std::unique_ptr<D[]> p { new D[3] };
     }
 
+    return 0;
+}
+
+struct Base {
+    int m_Id;
+    Base(int id)
+        : m_Id(id) 
+    {
+        std::cout << "Base::Base()\n";
+    }
+    ~Base() {
+        std::cout << "Base::~Base()\n";
+    }
+};
+
+void main_20200604_2313() {
+    std::unique_ptr<int> ptr1;
+    if (!ptr1) {
+        std::cout << "ptr1 is empty\n";
+    }
+    if (ptr1 == nullptr) {
+        std::cout << "ptr1 is empty\n";
+    }
+    
+    std::unique_ptr<Base> ptr2(new Base(14));
+}
+
+int main (int argc, const char *argv[]) {
+    //main_(); 
+    main_20200604_2313();
     return 0;
 }
 
