@@ -30,6 +30,10 @@ std::unique_ptr<D> pass_through(std::unique_ptr<D> p) {
     return p;
 }
 
+void close_file(std::FILE *fp) {
+    std::fclose(fp);
+}
+
 int main (int argc, const char *argv[]) {
     std::cout << "Unique ownership semantic demo\n"; 
     {
@@ -49,6 +53,30 @@ int main (int argc, const char *argv[]) {
         v.emplace_back(new D);
         for(auto& p: v) p->bar();
     }
+
+    std::cout << "Custom deleter demo\n";
+    std::ofstream("demo.txt") << 'x';
+    {
+        std::unique_ptr<std::FILE, decltype(&close_file)> fp(std::fopen("demo.txt", "r"), &close_file);
+        if (fp) {
+            std::cout << (char) std::fgetc(fp.get()) << "\n";
+        }
+    }
+
+    std::cout << "Custom lambda-expression deleteor demo\n";
+    {
+        std::unique_ptr<D, std::function<void(D*)>> p(new D, [](D *ptr){
+                    std::cout << "destroying using custom deleter..\n";
+                    delete ptr;
+                });
+        p->bar();
+    }
+
+    std::cout << "Array form of unique_ptr demo\n";
+    {
+        std::unique_ptr<D[]> p { new D[3] };
+    }
+
     return 0;
 }
 
