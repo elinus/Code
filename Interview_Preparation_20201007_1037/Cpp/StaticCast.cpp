@@ -23,6 +23,9 @@ class Human : public Mammal {
         }
 };
 
+class ClazzA {};
+class ClazzB {};
+
 int main (int argc, const char *argv[]) {
     A a;
     std::cout << __func__ << " :: A object created!\n";
@@ -39,7 +42,10 @@ int main (int argc, const char *argv[]) {
 
     Mammal *m3 = new Mammal; // Mammal that is not human!
     Human *h3 = static_cast<Human *>(m3); // OK so far
-    h3->scream();
+    //h3->scream(); // segfaults
+
+    ClazzA *ca = new ClazzA;
+    //ClazzB *cb = static_cast<ClazzB *>(ca);
     return 0;
 }
 
