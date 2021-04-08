@@ -19,5 +19,11 @@ int main(int argc, char const *argv[]) {
   // set
   a |= (1 << 14);
   cout << "a(set=14) = " << bitset<8 * sizeof(int)>(a)  << "\nNew(a) = " << a << endl;
+
+  // clear bit
+  int mask = ~(1 << 14);
+  a = a & mask;
+  cout << "clear( a = 14) = " << a << endl;
+
   return 0;
 }
