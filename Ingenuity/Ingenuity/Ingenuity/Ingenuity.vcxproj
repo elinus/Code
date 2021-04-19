@@ -147,6 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\concurrency\CalculateWithMutex.cpp" />
+    <ClCompile Include="src\concurrency\CaluclateWithAccumualtor.cpp" />
     <ClCompile Include="src\Functor.cpp" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\ThreadEvenOdd.cpp" />

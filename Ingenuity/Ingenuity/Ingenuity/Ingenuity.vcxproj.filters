@@ -24,5 +24,11 @@
     <ClCompile Include="src\ThreadEvenOdd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\concurrency\CaluclateWithAccumualtor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\concurrency\CalculateWithMutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
