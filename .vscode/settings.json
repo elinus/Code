@@ -10,7 +10,8 @@
         "random": "cpp",
         "mutex": "cpp",
         "chrono": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "cmath": "cpp"
     },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#65c89b",
