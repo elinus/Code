@@ -1,4 +1,4 @@
-package com.coco;
+package coco;
 
 import java.util.ArrayList;
 import java.util.List;

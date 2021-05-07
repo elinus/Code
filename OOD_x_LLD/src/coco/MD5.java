@@ -1,4 +1,4 @@
-package com.coco;
+package coco;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
