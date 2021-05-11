@@ -67,7 +67,8 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "fstream": "cpp"
     },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#65c89b",
