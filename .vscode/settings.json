@@ -68,7 +68,10 @@
         "xtr1common": "cpp",
         "xtree": "cpp",
         "xutility": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "regex": "cpp"
     },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#65c89b",
