@@ -12,9 +12,9 @@ struct TreeNode {
 };
 
 vector<int> inorderTraversal(TreeNode *A) {
-  vector<int> in;
+  vector<int> inorder;
   if (!A)
-    return in;
+    return inorder;
   stack<TreeNode *> s;
   while (true) {
     while (A) {
@@ -25,10 +25,10 @@ vector<int> inorderTraversal(TreeNode *A) {
       break;
     A = s.top();
     s.pop();
-    in.push_back(A->val);
+    inorder.push_back(A->val);
     A = A->right;
   }
-  return in;
+  return inorder;
 }
 
 int main(int argc, char const *argv[]) {
