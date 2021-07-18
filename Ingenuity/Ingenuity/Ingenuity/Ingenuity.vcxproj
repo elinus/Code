@@ -149,8 +149,14 @@
   <ItemGroup>
     <ClCompile Include="src\concurrency\CalculateWithMutex.cpp" />
     <ClCompile Include="src\concurrency\CaluclateWithAccumualtor.cpp" />
+    <ClCompile Include="src\ds-algo\BinarySearchTree.cpp" />
     <ClCompile Include="src\Functor.cpp" />
     <ClCompile Include="src\Source.cpp" />
+    <ClCompile Include="src\this-pointer\Async.cpp" />
+    <ClCompile Include="src\this-pointer\FuturePromise.cpp" />
+    <ClCompile Include="src\this-pointer\PrintEvenOdd.cpp" />
+    <ClCompile Include="src\this-pointer\Timer.cpp" />
+    <ClCompile Include="src\this-pointer\Wallet.cpp" />
     <ClCompile Include="src\ThreadEvenOdd.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
