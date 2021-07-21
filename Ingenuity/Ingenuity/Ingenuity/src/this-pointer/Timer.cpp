@@ -18,9 +18,9 @@ public:
 	}
 };
 
-int main() {
-	Timer t;
-	std::this_thread::sleep_for(std::chrono::microseconds(5000));
-	std::cout << t.elapsed() << std::endl;
-	return 0;
-}
+//int main() {
+//	Timer t;
+//	std::this_thread::sleep_for(std::chrono::microseconds(5000));
+//	std::cout << t.elapsed() << std::endl;
+//	return 0;
+//}

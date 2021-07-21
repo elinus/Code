@@ -147,8 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\AmedeusInterview.cpp" />
     <ClCompile Include="src\concurrency\CalculateWithMutex.cpp" />
     <ClCompile Include="src\concurrency\CaluclateWithAccumualtor.cpp" />
+    <ClCompile Include="src\design-patterns\creational\FactoryMethod.cpp" />
     <ClCompile Include="src\ds-algo\BinarySearchTree.cpp" />
     <ClCompile Include="src\Functor.cpp" />
     <ClCompile Include="src\Source.cpp" />
