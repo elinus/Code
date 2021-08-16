@@ -1,0 +1,6 @@
+Japan
+1000000
+India
+2000000
+America
+123500
