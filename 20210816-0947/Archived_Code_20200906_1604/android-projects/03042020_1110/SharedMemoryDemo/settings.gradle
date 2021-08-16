@@ -1,0 +1,4 @@
+rootProject.name='SharedMemoryDemo'
+include ':app'
+include ':sharedmemorylib'
+include ':clientsharedmemory'

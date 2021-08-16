@@ -1,0 +1,84 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <queue>
+
+class Graph {
+    private:
+        int V;
+        int E;
+        std::vector<int> *adj;
+    public:
+        Graph(int v, int e)
+            : V(v), E(e), adj(new std::vector<int>[V])
+        {}
+
+        ~Graph() {
+            delete [] adj;
+        }
+
+        void AddEdge(int u, int v) {
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+
+        void BfsUtil(int v, std::vector<bool> & marked) {
+            std::queue<int> que;
+            que.push(v);
+            marked[v] = true;
+            while (!que.empty()) {
+                v = que.front();
+                std::cout << std::setw(3) << v;
+                que.pop();
+                for (auto it = adj[v].begin(); it != adj[v].end(); ++it) {
+                    if (!marked[*it]) {
+                        que.push(*it);
+                        marked[*it] = true;
+                    }
+                }
+            }
+
+        }
+
+        void Bfs() {
+            std::cout << "BFS Traversal:";
+            std::vector<bool> marked(V, false);
+            for (int i = 0; i <  V; i++) {
+                if (!marked[i]) {
+                    BfsUtil(i, marked);
+                }
+            }
+            std::cout << "\n";
+        }
+
+        void PrintAdjacencyList() {
+            for (int i = 0; i < V; i++) {
+                std::cout << std::setw(3) <<  i << "|";
+                for (int j = 0; j < adj[i].size(); j++) {
+                    std::cout << std::setw(4) << adj[i][j];
+                }
+                std::cout << "\n";
+            }
+        }
+};
+
+int main (int argc, char *argv[]) {
+    
+    int vertex, edge, src, dest;
+
+    std::cin >> vertex >> edge;
+    
+    Graph gObj(vertex, edge);
+    
+    for (int i = 0; i < edge; i++) {
+        std::cin >> src >> dest;
+        gObj.AddEdge(src, dest);
+    }
+
+    gObj.PrintAdjacencyList();
+    std::cout << "\n\n";
+    gObj.Bfs();
+    return 0;
+}
+
+

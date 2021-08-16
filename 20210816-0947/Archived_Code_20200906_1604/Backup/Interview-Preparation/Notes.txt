@@ -1,0 +1,6 @@
+/* {{ C++ STL */
+
+1. https://www.acodersjourney.com/6-tips-supercharge-cpp-11-vector-performance/
+
+/* C++ STL }} */
+
