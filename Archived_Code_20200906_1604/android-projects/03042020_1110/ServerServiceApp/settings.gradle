@@ -1,4 +1,0 @@
-rootProject.name='ServerServiceApp'
-include ':app'
-include ':simplemathlib'
-include ':clientserviceapplication'
