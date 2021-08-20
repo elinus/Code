@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Perseverance", "Perseveranc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "concurrency", "concurrency\concurrency.vcxproj", "{685EEFE2-2DB6-49AA-A729-FFFF6E4D876C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dp_s_proxy", "dp_s_proxy\dp_s_proxy.vcxproj", "{569C28B6-8709-4C43-8AC9-76652BE0CFDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{685EEFE2-2DB6-49AA-A729-FFFF6E4D876C}.Release|x64.Build.0 = Release|x64
 		{685EEFE2-2DB6-49AA-A729-FFFF6E4D876C}.Release|x86.ActiveCfg = Release|Win32
 		{685EEFE2-2DB6-49AA-A729-FFFF6E4D876C}.Release|x86.Build.0 = Release|Win32
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Debug|x64.ActiveCfg = Debug|x64
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Debug|x64.Build.0 = Debug|x64
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Debug|x86.ActiveCfg = Debug|Win32
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Debug|x86.Build.0 = Debug|Win32
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Release|x64.ActiveCfg = Release|x64
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Release|x64.Build.0 = Release|x64
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Release|x86.ActiveCfg = Release|Win32
+		{569C28B6-8709-4C43-8AC9-76652BE0CFDE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
