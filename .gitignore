@@ -502,3 +502,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+./vscode/*
+.DS_Store
